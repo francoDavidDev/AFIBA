@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer base {
+  body {
+    @apply font-primary text-primary-200 bg-primary-200 ;
+  }
+  p,
+ h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-primary text-primary-200;
+  }
+ 
+  .h1 {
+    @apply text-[40px] leading-[40px]   md:text-[50px] sm:text-[40px] lg:text-[60px]    lg:leading-[62px] font-extrabold;
+  }
+  .h2 {
+    @apply text-[32px] leading-[40px] md:text-[45]  sm:text-[40px]  lg:text-[50px]   lg:leading-[50px] font-extrabold;
+  }
+  .h3 {
+    @apply text-[35px] sm:text-[30px] md:text-[40px] lg:text-[45px] leading-[46px] font-extrabold;
+  }
+  .h4 {
+    @apply text-[20px] sm:text-[30px] leading-[40px] font-extrabold;
+  }
+  .h5 {
+    @apply text-[15px] sm:text-[25px] leading-[35px] font-extrabold;
+  }
+  .h6 {
+    @apply text-[12px]  sm:text-[15px] leading-[28px] font-bold;
+  }
+  .text-body-sm {
+    @apply font-secondary font-normal text-[16px] leading-[26px];
+  }
+  .text-body-md {
+    @apply font-secondary font-normal text-[20px] leading-[32px];
+  }
+  .text-body-lg {
+    @apply font-secondary font-normal text-[24px] leading-[34px];
+  }
+  .btn {
+    @apply font-primary font-bold text-primary-200 border-[1px] border-primary-300 uppercase text-[12px] leading-[15px] h-[36px] px-[26px] tracking-[1px];
+  }
+  .btn-sm {
+    @apply font-primary font-bold text-primary-200 border-[1px] border-primary-300 uppercase text-[12px] leading-[18px] h-[42px] px-[30px] tracking-[1px];
+  }
+  .btn-lg {
+    @apply font-primary font-bold text-primary-200 border-[1px] border-primary-300  uppercase text-[12px]  md:text-[14px] leading-[18px] h-[46px] px-[30px] tracking-[1px];
+  }
+  .btn-primary {
+    @apply hover:bg-primary-200/90 transition hover:text-primary-300 hover:scale-[110%] hover:rounded-sm;
+  }
+  .btn-secondary {
+    @apply bg-white text-neutral-500 hover:bg-white/90 transition;
+  }
+  .link {
+    @apply text-neutral-500 text-sm uppercase font-extrabold tracking-[1px];
+  }
+  .section {
+    @apply pb-[80px] md:pb-[110px] lg:pb-[180px];
+  }
+  .section-title-group {
+    @apply flex items-center justify-center -space-x-20 mb-[50px] lg:mb-[80px];
+  }
+  .section-title {
+    @apply flex -space-x-4;
+  }
+}
+
+
+.slick-slide > div {
+  margin: 0 5px;
+}
+
+
+.slick-slide2 > div {
+  margin: 0 5px;
+}
+
+
+
+/* sizing of map container */
+.leaflet-container{
+  height: 100%;
+  width: 100%;
+}
+
