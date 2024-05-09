@@ -9,24 +9,55 @@ import { CARROUSEL } from "../../data/home";
 
 const Carrousel = () => {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+ 
+          slidesToScroll: 3,
+          infinite: true,
+     
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+    
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+    
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   return (
-    <div className=" w-[60%] h-full m-auto  bg-violet-500   ">
+    <div className="w-full  lg:w-[60%] m-auto text-neutral-100 h-[300px]   ">
       <Slider {...settings}>
         {CARROUSEL.map((item, i) => (
-          <div className="">
-            <div
-              key={i}
-              className="h5 text-black flex justify-center items-center  w-full  flex-col m-auto  bg-green-400  text-lg "
-            >
-              <h4 className="text-center m-auto">{item.title}</h4>
+          <div
+            key={i}
+            className="w-full  cursor-pointer  h-[300px]"
+            style={{ backgroundImage: `url('${item.image}')` }}
+          >
+            <img src={item.image} alt="" className="w-full h-full " />
+
+            <div className=" text-md lg:text-xl   relative -top-[12rem]  left-6 w-[60%]  ">
+              <h4  className="h4 text-neutral-100  ">Titulo</h4>
+              <h5  className="h5  text-neutral-100 ">Subtitulo</h5>
+              <p className="line-clamp-3  text-neutral-100"> {item.title} </p>
             </div>
           </div>
         ))}
@@ -36,3 +67,18 @@ const Carrousel = () => {
 };
 
 export default Carrousel;
+
+{
+  /*  <div key={i }  className="  w-full h-full  overflow-hidden"  style={{backgroundImage:`url('${item.image} ')`}}>
+            <div className="  w-full h-full  overflow-hidden" >
+              <img
+                src={item.image}
+                alt="image"
+                className="w-full h-full   hover:scale-110 transition-all duration-300 "
+              />
+            </div>
+            <div>
+              <p className="line-clamp-1">{item.title} </p>
+            </div>
+          </div> */
+}

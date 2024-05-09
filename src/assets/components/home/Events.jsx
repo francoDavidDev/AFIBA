@@ -4,7 +4,8 @@ import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NOTICES } from "../../data/home";
+import { EVENTS } from "../../data/home";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   var settings = {
@@ -46,13 +47,13 @@ const Events = () => {
   return (
     <section className="h-[300px] ">
       <div className="p-5 ">
-        <h4>PROXIMOS TORNEOS Y EVENTOS</h4>
+        <h4 className=" font-black  ">PROXIMOS TORNEOS Y EVENTOS</h4>
       </div>
       <div>
         <Slider {...settings} className="slick-slide2">
-          {NOTICES.map((item, i) => (
-            <div key={i} >
-                <div className="rounded-xl m-1">
+          {EVENTS.map((item, i) => (
+            <Link to={`/EventsViews/${item.id}`} key={i}  >
+                <div className="rounded-xl m-1 overflow-hidden ml-3 cursor-pointer">
                 <img
                 src={item.image}
                 alt="image"
@@ -63,7 +64,7 @@ const Events = () => {
                     <p className="line-clamp-1">{item.title} </p>
                 </div>
              
-            </div>
+            </Link>
           ))}
         </Slider>
       </div>

@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 import { MdMenu } from "react-icons/md";
 import NavMobile from "./NavMobile";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   //estado del header
@@ -23,13 +24,12 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-primary-100  py-[16px]" : "bg-primary-100  "
-      }    max-w-[1440px] z-30 left-0 right-0 mx-auto  flex-col flex justify-start items-center transition-all duration-300 `}
+        isActive ? "bg-primary-100  py-[16px] fixed" : "bg-primary-100  "
+      } fixed  max-w-[1440px] z-30 left-0 right-0 mx-auto  flex-col flex justify-start items-center transition-all duration-300 `}
     >
       <div className="flex justify-end items-center w-full gap-10 text-[12px] pr-10 h-10 text-neutral-100 font-semibold tracking-widest  ">
-        <a href="#">COMPRA </a>
-        <a href="#"> ENTRADAS </a>
-        <a href="#"> FIFA</a>
+        <Link to={`/Store`} className="hover:text-primary-400 transition-all duration-200">STORE </Link>
+        <a href="#" className="hover:text-primary-400 transition-all duration-200"> AFIBA MONSTER </a>
       </div>
       <div className="bg-white w-full h-[1px] "></div>
       <div className="w-full gap-10  flex justify-start items-center  px-[20px] lg:px-[80px] ">
@@ -44,10 +44,12 @@ const Header = () => {
           )}
         </div>
         <div className=" flex items-start justify-start flex-row text-white">
-          <h2 className="h3 ">
+          <Link to={'/'}>
+          <h2 className="h3 text-neutral-100 ">
             AFIBA
-          </h2>
-          <p className="text-[12px] flex items-start justify-start ">
+            </h2>
+            </Link>
+          <p className="text-[12px] flex items-start justify-start  text-neutral-100">
             &copy;
           </p>
         </div>

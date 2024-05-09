@@ -3,10 +3,10 @@ import React from "react";
 
 export const NAV = [
   { name: "INICIO", href: "/" },
-  { name: "NOSOTROS", href: "/about" },
-  { name: "IFBB ACADEMY", href: "/service" },
-  { name: "ELITE PRO", href: "/elite-pro" },
-  { name: "CALENDARIO", href: "/calendar" },
+  { name: "NOSOTROS", href: "/About" },
+
+
+  { name: "CALENDARIO", href: "/Calendar" },
 
   {
     /*   { name: "Reglamentos", href: "contact" },
