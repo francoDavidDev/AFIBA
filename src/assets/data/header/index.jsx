@@ -11,3 +11,11 @@ export const NAV = [
   { name: "Contacto", href: "contact" },*/
     },
   ];
+
+  import { FaFacebook,FaInstagram,FaWhatsapp  } from "react-icons/fa";
+
+  export const ICONS_NETWORKING=[
+    {icon:<FaWhatsapp/>, href:'#'},
+    {icon:<FaInstagram/>, href:'#'},
+    {icon:<FaFacebook/>, href:'#'},
+  ]

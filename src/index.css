@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply font-primary text-neutral-200 bg-primary-200 ;
+    @apply font-primary text-neutral-200 bg-gradient-to-b from-[#001A00] to-[#003300] ;
   }
   p,
  h1,
@@ -16,7 +16,7 @@
   h4,
   h5,
   h6 {
-    @apply font-primary text-neutral-200;
+    @apply font-primary text-primary-200;
   }
  
   .h1 {

@@ -44,15 +44,16 @@ const Carrousel = () => {
     ]
   };
   return (
-    <div className="w-full  lg:w-[60%] m-auto text-neutral-100 h-[300px]   ">
+    <div className="w-full  lg:w-[60%] m-auto text-neutral-100 h-full  overflow-hidden">
       <Slider {...settings}>
         {CARROUSEL.map((item, i) => (
           <div
             key={i}
-            className="w-full  cursor-pointer  h-[300px]"
-            style={{ backgroundImage: `url('${item.image}')` }}
+            className="w-full h-full cursor-pointer  "
+       
           >
-            <img src={item.image} alt="" className="w-full h-full " />
+            <video src={item.image} autoplay loop controls muted />
+           {/* <img src={item.image} alt="" className="w-full h-full " />*/}
 
             <div className=" text-md lg:text-xl   relative -top-[12rem]  left-6 w-[60%]  ">
               <h4  className="h4 text-neutral-100  ">Titulo</h4>

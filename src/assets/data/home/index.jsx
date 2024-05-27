@@ -2,6 +2,7 @@ import imageCarrousel1 from "../../imgs/home/carrouselHero/image1.png";
 import imageCarrousel2 from "../../imgs/home/carrouselHero/image2.png";
 import imageCarrousel3 from "../../imgs/home/carrouselHero/image3.png";
 
+
 export const CARROUSEL = [
   {
     image: imageCarrousel1,
