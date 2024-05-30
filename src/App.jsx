@@ -37,7 +37,6 @@ function App() {
       <Route path="/EventsViews/:id" element={<EventsViews/>} />
       <Route path="/MundialViews/:id" element={<MundialViews/>} />
 
-
       {/* Registration Form */}
       <Route path="/EventViews/:id/RegistrationForm" element={<RegistrationForm/>} />
 

@@ -21,10 +21,10 @@ export const CARROUSEL = [
   },
 ];
 
-import image1 from "../../imgs/home/notices/image1.png";
-import image2 from "../../imgs/home/notices/image2.png";
-import image3 from "../../imgs/home/notices/image3.png";
-import image4 from "../../imgs/home/notices/image4.png";
+import image1 from "../../imgs/home/notices/7_julio.jpg";
+import image2 from "../../imgs/home/notices/24 _febrero.jpg";
+import image3 from "../../imgs/home/notices/13_octubre.jpg";
+import image4 from "../../imgs/home/notices/21_julio.jpg";
 
 export const NOTICES = [
   {
