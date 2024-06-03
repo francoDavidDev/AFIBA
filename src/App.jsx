@@ -27,6 +27,8 @@ function App() {
       <Header/>
       <Routes>
       <Route path="/" element={<Home mode="wait" />} />
+      
+
 
       {/* ABOUT */}
       <Route path="/About" element={<About/>} />

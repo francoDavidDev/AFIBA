@@ -8,8 +8,7 @@ import Slider from "react-slick";
 // import motiopn
 import { motion, useCycle } from "framer-motion";
 //import image/videos
-import image from "../../../imgs/home/bannerSecondary3/image1.png";
-
+import image from "../../../imgs/home/bannerSecondary3/BANNER.jpg";
 
 
 import { TOURNAMENTS } from "../../../data/tournaments";
@@ -53,11 +52,12 @@ const TournamentsViews_female = () => {
     <section className="w-full flex flex-col justify-center h-auto items-center m-auto gap-y-10">
       <div className="w-[90%] h-auto py-20 flex flex-col justify-center items-center gap-y-7 ">
         <div className="w-full m-auto  text-center ">
-          <h2 className="h2"> AFIBA FEMENINO </h2>
+          <h2 className="h2"> MODALIDAD FEMENINA </h2>
         </div>
 
-        <div className="h-[600px] w-full  bg-cover bg-top bg-no-repeat rounded-xl  overflow-hidden">
-          <img src={image} className="w-full h-[150%] rounded-xl" alt="" />
+        <div className="h-[300px] w-full  bg-cover bg-center bg-no-repeat rounded-xl  overflow-hidden"
+         style={{ backgroundImage: `url('${image}')` }}>
+       
         </div>
         <div className="w-full  flex justify-between items-start">
           <div className="flex gap-5 ">
@@ -76,7 +76,7 @@ const TournamentsViews_female = () => {
           </div>
         </div>
 
-        <div className=" py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-2  gap-5 m-auto">
+        <div className=" py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-2  gap-5 m-auto ">
         {TOURNAMENTS.map((item, i) => {
   if (item.tag === 'femenino') {
     return (
