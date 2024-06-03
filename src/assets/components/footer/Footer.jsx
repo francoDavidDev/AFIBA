@@ -7,7 +7,7 @@ import { AiFillTikTok } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <footer className="w-full  h-auto py-5  bg-gradient-to-r from-emerald-900 to-emerald-800 ">
+    <footer className="w-full  h-auto py-5 bg-primary-300 ">
       <div className=" w-[90%] m-auto flex  py-1 items-start justify-between flex-row text-white  " >
         <h2 className="h4 text-white ">AFIBA</h2>
         <p className="text-[12px] flex items-start justify-start text-white ">&copy;</p>
@@ -20,7 +20,7 @@ const Footer = () => {
           <AiFillTikTok className="hover:text-primary-400 hover:scale-110 transition-all duration-300 cursor-pointer" />
         </div>
       </div>
-      <div className="w-full h-[2px] bg-white " ></div>
+      <div className="w-full h-[2px] bg-primary-400 " ></div>
 
       <div className="flex justify-center items-center gap-10 py-5 font-semibold text-neutral-100  flex-wrap">
         <a href="#" className="hover:text-primary-400 text-[10px] sm:text-sm  transition-all duration-300 cursor-pointer">POLITICA DE PRIVACIDAD</a>

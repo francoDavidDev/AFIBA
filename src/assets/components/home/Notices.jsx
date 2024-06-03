@@ -66,7 +66,6 @@ const Notices = () => {
                 <motion.div
                   onMouseEnter={() => anime()}
                   onMouseLeave={() => anime()}
-              
                   className="w-full bg-green-500 h-[430px] bg-cover bg-no-repeat overflow-hidden bg-top rounded-xl  cursor-pointer hover:scale-105  transition-all   "
                   style={{ backgroundImage: `url('${item.image}')` }}
                 >

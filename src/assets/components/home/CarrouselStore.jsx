@@ -4,8 +4,8 @@ import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { CARROUSEL_STORE, NOTICES } from "../../data/home";
 import { Link } from "react-router-dom";
+import { GIMS } from "../../data/gims";
 
 const CarrouselStore = () => {
   var settings = {
@@ -47,21 +47,22 @@ const CarrouselStore = () => {
   return (
     <section className="h-auto py-20">
       <div className="p-5 ">
-        <h4 className=" font-black">AFIBA STORE</h4>
+        <h4 className="h4 font-black">GIMNASIOS RECOMENDADOS</h4>
       </div>
       <div>
-        <Slider {...settings} >
-          {CARROUSEL_STORE.map((item, i) => (
-            <Link to={`/Store/SingleProduct/${item.id} `} key={i} > 
-                <div className="rounded-xl ml-3 overflow-hidden cursor-pointer w-[90%] h-[150px] bg-cover bg-no-repeat bg-top " style={{backgroundImage:`url('${item.image}')` }}>
-             
+      <Slider {...settings} className="slick-slider">
+          {GIMS.map((item, i) => {
+            return (
+              <div key={i} className="overflow-hidden">
+                <div
+                  className="rounded-xl m-1overflow-hidden w-[95%] h-[300px] cursor-pointer bg-no-repeat bg-cover bg-center "
+                  style={{ backgroundImage: `url('${item.image}')` }}
+                >
+                  <div className=" w-full h-full   flex justify-center items-center hover:bg-black/50 rounded-xl  "></div>
                 </div>
-                <div>
-                    <p className="line-clamp-1  ml-3 ">{item.title} </p>
-                </div>
-             
-            </Link>
-          ))}
+              </div>
+            );
+          })}
         </Slider>
       </div>
     </section>

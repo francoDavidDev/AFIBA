@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../../components/home/Hero";
 import Notices from "../../components/home/Notices";
-import Events from "../../components/home/Events";
+import SponsorsCarrousel from "../../components/home/SponsorsCarrousel";
 import Mundial from "../../components/home/Mundial";
 import CarrouselStore from "../../components/home/CarrouselStore";
 import BannerSecondary from "../../components/home/BannerSecondary";
@@ -15,12 +15,16 @@ const Home = () => {
     <section className=" ">
       <Hero />
       <Notices />
-      <Events />
-      <Mundial />
+      {/* carrousel sponsors */}
+      <SponsorsCarrousel />
+     {/* <Mundial />*/}
+     {/* afiba banner */}
       <BannerMain />
+      {/* gimnasios */}
       <CarrouselStore />
       <BannerSecondary />
-      <BannerSecondary2 />
+     {/* <BannerSecondary2 />*/}
+     {/* torneos */}
       <CarrouselThemes />
       <BannerSecondary3 />
     </section>

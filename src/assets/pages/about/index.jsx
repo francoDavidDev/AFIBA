@@ -1,67 +1,75 @@
-import React from 'react'
-// import image 
-import image1 from '../../imgs/home/carrouselHero/image2.png'
-import image2 from '../../imgs/home/carrouselHero/image3.png'
+import React, { useEffect, useState } from "react";
+import banner from "../../imgs/about/staff/banner.png";
+import { motion, useAnimate } from "framer-motion";
+import { ReactTyped } from "react-typed";
 
+import Info from "../../components/about/Info";
+import Members from "../../components/about/Members";
+import Gallery from "../../components/about/Gallery";
 
 const About = () => {
+  // Definimos un componente de función llamado About
+
   return (
-    <div className="bg-gray-100">
-    {/* Encabezado */}
-    <header className="bg-white shadow">
-      <div className="container mx-auto py-4 px-8">
-        <h1 className="text-3xl font-bold text-gray-800">Acerca de nosotros</h1>
-      </div>
-    </header>
+    <motion.section
+      
+    initial={{ y: 100, opacity: 0 }}
+    animate={{ y: 100, opacity: 1 }}
+    exit={{ y: 100, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ ease: "easeOut", duration:0.5 }}
+    className="w-full h-auto   flex flex-col justify-center gpy">
+      <div
+        className="w-full  h-[100vh] flex flex-col-reverse bg-center bg-no-repeat bg-cover "
+        style={{ backgroundImage: `url('${banner}')` }}
+      ></div>
 
-    {/* Sección 1 */}
-    <section className="py-12">
-      <div className="container mx-auto px-8">
-        <div className="flex flex-col lg:flex-row items-center lg:justify-between">
-          <div className="w-full lg:w-1/2 lg:pr-8 mb-6 lg:mb-0">
-            <img className="rounded-lg shadow" src={image1} alt="Misión" />
-          </div>
-          <div className="w-full lg:w-1/2">
-            <h2 className="text-2xl font-bold mb-4">Nuestra Misión</h2>
-            <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet nibh eu magna facilisis venenatis.</p>
-          </div>
+      {/* Contenedor de texto/banner */}
+      <div className="w-full h-auto  flex">
+        {/* Contenido de texto/banner */}
+        <div className="w-full h-full   flex flex-col justify-center">
+          {/* Texto */}
+          <motion.div
+           initial={{ y: 100, opacity: 0 }}
+        
+           whileInView={{ y: 0, opacity: 1 }}
+           transition={{ ease: "easeOut" }}
+          className="text-center my-10 flex flex-col gap-y-10">
+            <h1 className="h1 text-primary-400">FAMF</h1>
+            <p className=" w-[90%] md:w-[70%]  text-md md:text-2xl text-left m-auto leading-relaxed tracking-[4px] font-light">
+              <span className="text-primary-400 ">
+                La Federación de Fisicoculturismo
+              </span>{" "}
+              es una organización dedicada al desarrollo y promoción del deporte
+              del fisicoculturismo en nuestra comunidad y más allá. Como la
+              autoridad líder en el fisicoculturismo en nuestra región, nos
+              esforzamos por fomentar un ambiente inclusivo y accesible para
+              atletas de todos los niveles de experiencia y habilidad.
+            </p>
+          </motion.div>
+          {/* Texto animado */}
+          <h4 className="text-center py-5 tracking-widest">
+            SOMOS EL EJEMPLO DE...
+          </h4>
+          <h4 className="h4 text-primary-400 text-center">
+            <ReactTyped
+              className="md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2"
+              strings={["DEDICACION", "CONTANCIA", "DISCIPLINA"]}
+              typeSpeed={120}
+              backSpeed={70}
+              loop
+            />
+          </h4>
         </div>
       </div>
-    </section>
+<Info />
 
-    {/* Sección 2 */}
-    <section className="py-12 bg-gray-200">
-      <div className="container mx-auto px-8">
-        <div className="flex flex-col lg:flex-row-reverse items-center lg:justify-between">
-          <div className="w-full lg:w-1/2 lg:pl-8 mb-6 lg:mb-0">
-            <img className="rounded-lg shadow" src={image2} alt="Historia" />
-          </div>
-          <div className="w-full lg:w-1/2">
-            <h2 className="text-2xl font-bold mb-4">Nuestra Historia</h2>
-            <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet nibh eu magna facilisis venenatis.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      {/* Sección de miembros del comité */}
+     <Members />
+      {/* Galería */}
+    <Gallery/>
+    </motion.section>
+  );
+};
 
-    {/* Sección 3 */}
-    <section className="py-12">
-      <div className="container mx-auto px-8">
-        <div className="flex flex-col lg:flex-row items-center lg:justify-between">
-          <div className="w-full lg:w-1/2 lg:pr-8 mb-6 lg:mb-0">
-            <img className="rounded-lg shadow" src={image2} alt="Equipo" />
-          </div>
-          <div className="w-full lg:w-1/2">
-            <h2 className="text-2xl font-bold mb-4">Nuestro Equipo</h2>
-            <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet nibh eu magna facilisis venenatis.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
- 
-  </div>
-  )
-}
-
-export default About
+export default About;

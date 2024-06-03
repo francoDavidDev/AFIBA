@@ -1,8 +1,6 @@
 export const NAV = [
     { name: "INICIO", href: "/" },
     { name: "NOSOTROS", href: "/about" },
-    { name: "IFBB ACADEMY", href: "/service" },
-    { name: "ELITE PRO", href: "/elite-pro" },
     { name: "CALENDARIO", href: "/calendar" },
   
     {

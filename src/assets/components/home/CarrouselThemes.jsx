@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {  CARROUSEL_THEMES, NOTICES } from "../../data/home";
+import { Link } from "react-router-dom";
+import { TOURNAMENTS } from "../../data/tournaments";
 
 const CarrouselThemes = () => {
   var settings = {
@@ -46,21 +48,29 @@ const CarrouselThemes = () => {
   };
   return (
     <section className="h-auto py-20">
-      <div className="p-5 ">
-        <h4 className="h4" >AFIBA TEMAS</h4>
+      <div className="p-5 flex w-full  justify-between items-center ">
+        <h4 className="h4" >TORNEOS</h4>
+        <h5 className="h5 text-sky-500 underline">
+          <Link to={`/Tournaments`}>
+          VER TODOS</Link>
+        </h5>
       </div>
       <div>
         <Slider {...settings} className="slick-slide_themes">
-          {CARROUSEL_THEMES.map((item, i) => (
-            <div key={i} > 
-                <div className="rounded-xl m-1 overflow-hidden w-[90%] h-[350px] cursor-pointer bg-no-repeat bg-cover bg-center "  style={{backgroundImage:`url('${item.image}')` }}>
+          {TOURNAMENTS.map((item, i) => (
+            <Link
+            to={`/TournamentsViews/${item.id}`}
+            key={i} > 
+                <div className="rounded-xl m-1 overflow-hidden w-[90%] h-[350px] cursor-pointer bg-no-repeat bg-cover bg-center  "  style={{backgroundImage:`url('${item.image}')` }}>
               
+                <div className=" w-full h-full   flex justify-center items-center hover:bg-black/50 rounded-xl  "></div>
+
                 </div>
                 <div className="w-[90%] ">
                     <p className="line-clamp-1">{item.title} </p>
                 </div>
              
-            </div>
+            </Link>
           ))}
         </Slider>
       </div>

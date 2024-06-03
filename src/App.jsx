@@ -12,6 +12,8 @@ import SingleProduct from "./assets/components/store/SingleProduct";
 import RegistrationForm from "./assets/pages/RegistrationForm";
 import About from "./assets/pages/about";
 import Calendar from "./assets/pages/calendar/Calendar";
+import Tournaments from "./assets/pages/tournaments";
+import TournamentsViews from "./assets/components/views/home/TournamentsViews";
 
 function App() {
 
@@ -32,10 +34,17 @@ function App() {
       <Route path="/Store" element={<Store/>} />
       <Route path="/Store/SingleProduct/:id" element={<SingleProduct/>} />
 
+      {/* TOURNAMENT */}
+      <Route path="/Tournaments" element={<Tournaments/>} />
+
       {/* VIEWS */}
       <Route path="/NoticesViews/:id" element={<NoticesViews/>} />
       <Route path="/EventsViews/:id" element={<EventsViews/>} />
       <Route path="/MundialViews/:id" element={<MundialViews/>} />
+      <Route path="/TournamentsViews/:id" element={<TournamentsViews/>} />
+
+    
+      
 
       {/* Registration Form */}
       <Route path="/EventViews/:id/RegistrationForm" element={<RegistrationForm/>} />
