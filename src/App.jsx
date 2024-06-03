@@ -14,6 +14,8 @@ import About from "./assets/pages/about";
 import Calendar from "./assets/pages/calendar/Calendar";
 import Tournaments from "./assets/pages/tournaments";
 import TournamentsViews from "./assets/components/views/home/TournamentsViews";
+import TournamentsViews_masculine from "./assets/components/views/home/TournamentsViews_masculine";
+import TournamentsViews_female from "./assets/components/views/home/TournamentsViews_female";
 
 function App() {
 
@@ -42,6 +44,10 @@ function App() {
       <Route path="/EventsViews/:id" element={<EventsViews/>} />
       <Route path="/MundialViews/:id" element={<MundialViews/>} />
       <Route path="/TournamentsViews/:id" element={<TournamentsViews/>} />
+
+      <Route path="/TournamentsViews_masculine" element={<TournamentsViews_masculine/>} />
+      <Route path="/TournamentsViews_female" element={<TournamentsViews_female/>} />
+
 
     
       

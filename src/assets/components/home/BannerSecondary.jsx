@@ -11,12 +11,13 @@ const BannerSecondary = () => {
           <h2 className="h2 text-neutral-100  ">AFIBA MASCULINO</h2>
 
           <p className=" w-[100%] text-lg line-clamp-5  sm:line-clamp-none text-neutral-100 ">
-            Los grandes clásicos nunca pasan de moda La nueva colección de FIFA
-            Classics ya está disponible en la tienda oficial de la FIFA.
+            Categoria de AFIBA PARA HOMBRES
           </p>
+          <Link to={"/TournamentsViews_masculine"}>
           <button className="btn-lg rounded-3xl border-2 border-neutral-100 hover:scale-110 transition-all duration-200 cursor-pointer">
-            <Link to={"/Store"}> VER MAS</Link>
+             VER MAS
           </button>
+          </Link>
         </div>
       </div>
       <div className="w-full h-full flex justify-center items-center ">

@@ -14,11 +14,10 @@ const CarrouselMain = () => {
           <h2 className="h2 text-neutral-100  ">AFIBA</h2>
 
           <p className=" w-[100%] text-lg line-clamp-5  sm:line-clamp-none text-neutral-100 ">
-            Los grandes clásicos nunca pasan de moda La nueva colección de FIFA
-            Classics ya está disponible en la tienda oficial de la FIFA.
+            SOMOS AFIBA, CONOCENOS
           </p>
           <button className="btn rounded-3xl border-2 border-neutral-100 hover:scale-110 transition-all duration-200 cursor-pointer">
-            <Link to={"/Store"}> DESCRUBRELA</Link>
+            <Link to={"/About"}> VER MAS</Link>
           </button>
         </div>
       </div>

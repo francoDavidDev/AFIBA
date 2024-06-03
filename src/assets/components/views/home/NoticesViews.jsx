@@ -53,8 +53,10 @@ const NoticesViews = () => {
           <h2 className="h2"> {title} </h2>
         </div>
 
-        <div className="h-[600px] w-full  bg-cover bg-top bg-no-repeat rounded-xl  overflow-hidden">
-          <img src={image} className="w-full h-[150%] rounded-xl" alt="" />
+        <div className="h-[600px] w-full  bg-cover bg-top bg-no-repeat rounded-xl  overflow-hidden"
+        style={{backgroundImage:`url('${image}')`}}
+        >
+     
         </div>
         <div className="w-full  flex justify-between items-start">
           <div className="bg-primary-300 px-4 hover:-translate-y-1 transition-all hover:shadow-black ">
@@ -77,11 +79,11 @@ const NoticesViews = () => {
       <div className="pb-12  w-[90%]">
         <div className=" mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:justify-between">
-            <div className="w-full lg:w-1/2 lg:pr-8 mb-6 lg:mb-0">
+            <div className="w-full lg:w-1/2 lg:pr-8 mb-6 lg:mb-0 flex justify-center">
               <img className="rounded-lg shadow" src={image} alt="Misión" />
             </div>
             <div className="w-full lg:w-1/2">
-              <h2 className="text-2xl font-bold mb-4">¿QUE ES EL TORNEO?</h2>
+              <h2 className="text-2xl font-bold mb-4">{title}</h2>
               <p className="text-neutral-100">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 sit amet nibh eu magna facilisis venenatis. Lorem ipsum dolor
@@ -102,7 +104,7 @@ const NoticesViews = () => {
       {/* sponsors */}
      <Sponsors/>
 {/* inscription and rules */}
-      <div className="  py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-3  gap-[2px] m-auto">
+{title !== 'CALENDARIO' ?   <div className="  py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-3  gap-[2px] m-auto">
         <div
           className=" w-[1fr] h-[300px]   flex flex-col justify-center cursor-pointer bg-center bg-cover  bg-no-repeat  "
           style={{ backgroundImage: `url(${rules}) ` }}
@@ -153,7 +155,8 @@ const NoticesViews = () => {
          
           </motion.div>
         </motion.div>
-      </div>
+      </div>: null }
+    
     </section>
   );
 };

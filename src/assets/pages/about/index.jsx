@@ -35,10 +35,10 @@ const About = () => {
            whileInView={{ y: 0, opacity: 1 }}
            transition={{ ease: "easeOut" }}
           className="text-center my-10 flex flex-col gap-y-10">
-            <h1 className="h1 text-primary-400">FAMF</h1>
+            <h1 className="h1 text-primary-300">AFIBA</h1>
             <p className=" w-[90%] md:w-[70%]  text-md md:text-2xl text-left m-auto leading-relaxed tracking-[4px] font-light">
-              <span className="text-primary-400 ">
-                La Federación de Fisicoculturismo
+              <span className="text-primary-300 ">
+               AFIBA
               </span>{" "}
               es una organización dedicada al desarrollo y promoción del deporte
               del fisicoculturismo en nuestra comunidad y más allá. Como la
@@ -51,7 +51,7 @@ const About = () => {
           <h4 className="text-center py-5 tracking-widest">
             SOMOS EL EJEMPLO DE...
           </h4>
-          <h4 className="h4 text-primary-400 text-center">
+          <h4 className="h4 text-primary-300 text-center">
             <ReactTyped
               className="md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2"
               strings={["DEDICACION", "CONTANCIA", "DISCIPLINA"]}

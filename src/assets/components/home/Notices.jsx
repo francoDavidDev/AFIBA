@@ -57,7 +57,7 @@ const Notices = () => {
     <div className=" w-full flex   h-auto flex-col   lg:flex-row z-10 text-primary-200">
       {/* izquierda */}
       <div className="w-full lg:w-1/2  p-10 gap-y-5 flex flex-col ">
-        <h4 className="h4 p ">NOTICIAS</h4>
+        <h4 className="h4 p ">CALENDARIO</h4>
         {NOTICES.map((item, i) => {
           if (item.id === "1") {
             return (
@@ -111,14 +111,14 @@ const Notices = () => {
       </div>
       {/* derecha */}
       <div className="w-full lg:w-1/2 p-10  gap-y-5 flex  flex-col">
-        <h4 className="h4 pr-10 text-right ">OTRAS NOTICIAS</h4>
+        <h4 className="h4 pr-10 text-right ">OTROS EVENTOS</h4>
         <div className="w-full  flex gap-0 lg:gap-4 gap-y-4 justify-around lg:justify-center items-center flex-wrap">
           {NOTICES.map((item, i) => {
             if (item.id !== "1") {
               return (
                 <Link
                 to={`/NoticesViews/${item.id}`}
-                  className="w-full  md:w-[45%] sm:w-full  h-[200px]  md:h-[400px] overflow-hidden rounded-xl    flex flex-col justify-center cursor-pointer  hover:-translate-y-1 duration-200  hover:rounded-xl bg-center bg-cover bg-no-repeat "
+                  className="w-full  md:w-[45%] sm:w-full  h-[200px]  md:h-[400px] overflow-hidden rounded-xl    flex flex-col justify-center cursor-pointer  hover:-translate-y-1 duration-200  hover:rounded-xl bg-bottom bg-cover bg-no-repeat "
                   style={{ backgroundImage: `url('${item.image}')` }}
                 >
                   <div className="  h-full w-[300px] "> </div>

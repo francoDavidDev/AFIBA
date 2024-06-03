@@ -48,7 +48,7 @@ const Members = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeOut",delay:0.3 }}
       className=" w-full flex   justify-start items-center gap-5 ">
-        <h4 className=" h4 uppercase py-10   text-primary-400  flex  justify-start items-center gap-5">
+        <h4 className=" h4 uppercase py-10   text-primary-300  flex  justify-start items-center gap-5">
           MIEMBROS{" "}
           <span>
             {" "}
@@ -71,7 +71,7 @@ const Members = () => {
             key={index}
             onMouseEnter={() => setDropdown("OSCAR")}
             onMouseLeave={() => setDropdown("")}
-            className="w-[300px] h-[350px] bg-blue-500 rounded-2xl overflow-hidden  transition-all duration-300 hover:text-primary-400   hover:shadow-primary-400 hover:shadow-md  shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+            className="w-[300px] h-[350px] bg-blue-500 rounded-2xl overflow-hidden  transition-all duration-300 hover:text-primary-300   hover:shadow-primary-300 hover:shadow-md  shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
           >
             {/* Imagen */}
             <div
@@ -93,7 +93,7 @@ const Members = () => {
                   {item.icon_options.map((item, i) => (
                     <div
                       key={i}
-                      className="relative cursor-pointer w-10 h-10 hover:scale-110 flex hover:text-primary-400 text-primary-200 justify-center items-center bg-neutral-400 rounded-full"
+                      className="relative cursor-pointer w-10 h-10 hover:scale-110 flex hover:text-primary-300 text-primary-200 justify-center items-center bg-neutral-400 rounded-full"
                     >
                       {item.icon}
                     </div>
@@ -103,7 +103,7 @@ const Members = () => {
                 <div className="w-10 h-10 text-primary-200 flex justify-center items-center bg-neutral-400 rounded-full">
                   <IoShareSocial
                     className={`${
-                      dropdownOption ? "text-primary-400" : "text-primary-200"
+                      dropdownOption ? "text-primary-300" : "text-primary-200"
                     } text-2xl`}
                   />
                 </div>
@@ -113,7 +113,7 @@ const Members = () => {
               <h6
                 className={`${
                   dropdown === "OSCAR"
-                    ? "text-primary-400 scale-150 shadow-xl"
+                    ? "text-primary-300 scale-150 shadow-xl"
                     : "text-primary-200"
                 } h6 transition-all duration-200`}
               >

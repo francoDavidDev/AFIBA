@@ -6,7 +6,7 @@ export const NAV = [
   { name: "NOSOTROS", href: "/About" },
 
 
-  { name: "CALENDARIO", href: "/Calendar" },
+  { name: "CALENDARIO", href: "/NoticesViews/1" },
 
   {
     /*   { name: "Reglamentos", href: "contact" },

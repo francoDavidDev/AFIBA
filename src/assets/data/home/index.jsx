@@ -25,18 +25,19 @@ import image1 from "../../imgs/home/notices/7_julio.jpg";
 import image2 from "../../imgs/home/notices/24 _febrero.jpg";
 import image3 from "../../imgs/home/notices/13_octubre.jpg";
 import image4 from "../../imgs/home/notices/21_julio.jpg";
+import calendario from "../../imgs/home/notices/calendario.jpg";
 
 export const NOTICES = [
   {
     id: "1",
-    title: "Cesar luis menotti, mucho mas que futoll",
+    title: "CALENDARIO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: image1,
+    image: calendario,
   },
   {
     id: "2",
-    title: "Cesar luis menotti, mucho mas que futoll",
+    title: "titulo de noticia o evento proximo",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: image1,

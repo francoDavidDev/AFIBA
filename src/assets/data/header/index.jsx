@@ -1,7 +1,7 @@
 export const NAV = [
     { name: "INICIO", href: "/" },
     { name: "NOSOTROS", href: "/about" },
-    { name: "CALENDARIO", href: "/calendar" },
+    { name: "CALENDARIO", href: "/NoticesViews/1" },
   
     {
       /*   { name: "Reglamentos", href: "contact" },
