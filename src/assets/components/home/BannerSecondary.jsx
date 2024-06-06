@@ -1,33 +1,48 @@
-import React from "react";
-// import banner image
-import banner from "../../imgs/home/bannerSecondary/BANNER.jpg";
+import React, { useState } from "react";
+import banner from "../../imgs/home/bannerSecondary3/BANNER.jpg";
 import { Link } from "react-router-dom";
 
-const BannerSecondary = () => {
-  return (
-    <div className="h-auto w-full bg-cover bg-top bg-no-repeat  flex flex-col md:flex-row   justify-center items-center md:bg-gradient-to-l md:from-black  md:to-green-900 bg-gradient-to-t from-black  to-green-900 ">
-      <div className="md:w-[40%] w-full h-auto py-10 md:py-0 ">
-      <div className="w-full  h-full  m-auto flex  flex-col justify-center items-center gap-y-5 ">
-          <h4 className="w-full h3 md:h5 text-neutral-100 text-center">MODALIDAD MASCULINA</h4>
+const BannerSecondary3 = () => {
+  const [isDragging, setIsDragging] = useState(false);
 
-          <p className=" w-[100%] text-center text-lg  md:text-sm line-clamp-5  sm:line-clamp-none text-neutral-100 ">
-            CATEGORIA DE HOMBRES
-          </p>
-          <Link to={"/TournamentsViews_masculine"}>
-          <button className="btn-lg rounded-3xl border-2 border-neutral-100 hover:scale-110 transition-all duration-200 cursor-pointer">
-             VER MAS
+  const handleDragStart = (e) => {
+    setIsDragging(true);
+    e.dataTransfer.setDragImage(e.target, 50, 50); // Ajusta las coordenadas según necesites
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
+
+  return (
+    <div className="h-auto w-full flex flex-col md:flex-row justify-center items-center bg-gradient-to-t from-black to-green-900">
+      {/* Text Section */}
+      <div className="md:w-1/2 w-full py-10 md:py-0 flex flex-col justify-center items-center gap-5">
+        <h4 className="text-2xl md:text-4xl text-center text-neutral-100">MODALIDAD FEMENINA</h4>
+        <p className="text-lg md:text-base text-center text-neutral-100 line-clamp-5">
+          CATEGORÍA DE MUJERES
+        </p>
+        <Link to={"/TournamentsViews_female"}>
+          <button className="bg-transparent border-2 border-neutral-100 text-neutral-100 rounded-3xl py-2 px-6 hover:bg-neutral-100 hover:text-black transition duration-200">
+            VER MÁS
           </button>
-          </Link>
-        </div>
+        </Link>
       </div>
-      <div  className="w-full h-full flex justify-center items-center  overflow-x-auto">
+
+      {/* Image Section */}
+      <div className="w-full h-full flex justify-center items-center">
         <div
-          className="w-full h-[250px] overflow-hidden bg-yellow-500 bg-top md:bg-center bg-cover bg-no-repeat"
+          className={`w-full h-[250px] overflow-hidden bg-cover bg-center bg-no-repeat transition-transform duration-300 cursor-pointer ${isDragging ? "cursor-grabbing" : "hover:scale-105"}`}
           style={{ backgroundImage: `url('${banner}')` }}
-        ></div>
+          draggable="true"
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+        >
+          {/* Opcional: Puedes añadir más contenido dentro del contenedor de la imagen */}
+        </div>
       </div>
     </div>
   );
 };
 
-export default BannerSecondary;
+export default BannerSecondary3;

@@ -111,7 +111,7 @@ const Notices = () => {
       </div>
       {/* derecha */}
       <div className="w-full lg:w-1/2 p-10  gap-y-5 flex  flex-col">
-        <h4 className="h4 pr-10 text-right ">CALENDARIO</h4>
+        <h4 className="h4 pr-10 text-right ">NOTICIAS</h4>
         <div className="w-full  flex gap-0 lg:gap-4 gap-y-4 justify-around lg:justify-center items-center flex-wrap">
           {NOTICES.map((item, i) => {
             if (item.id !== "1") {
