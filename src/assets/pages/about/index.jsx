@@ -32,18 +32,18 @@ const About = () => {
     transition={{ ease: "easeOut", duration:0.5 }}
     className="w-full h-auto   flex flex-col justify-center gpy">
       {/* hero */}
-      <div className="h-auto w-full flex flex-col  ">
-      <div className="md:bg-gradient-to-l md:from-black  md:to-primary-300 bg-gradient-to-t from-black  to-primary-300   w-full   h-[auto]  flex flex-col-reverse lg:flex-row justify-center items-center   ">
-        <div className="w-full  lg:w-[40%] flex flex-col text-center gap-y-8 px-5 py-10 lg:py-0  ">
-          <h2 className="h3 font-bold  text-primay-100">
-          ¿QUIENES SOMOS? 
-          </h2>
-        ¿
+      <div className="h-auto w-full flex flex-col-reverse  ">
+      <div className="w-full md:bg-gradient-to-l md:from-black  md:to-primary-300 bg-gradient-to-t from-[#151515]  to-primary-300    h-[auto]  flex flex-col-reverse lg:flex-row justify-center items-center   ">
+        <div className="w-full  lg:w-[40%] flex flex-col-reverse text-center m-auto px-5 py-10 lg:py-0  ">
+          <h3 className="h4 md:h3 font-bold text-primary-100  md:text-primary-200 ">
+          NOSOTROS
+          </h3>
+        
         
         </div>
         {/* VIDEO */}
         <div className="w-full  lg:w-[60%] m-auto  h-full   overflow-hidden  ">
-         <img src={banner} alt="" />
+         <img src={banner} alt="" className="w-full" />
         </div>
         {/* <Carrousel />*/}
       </div>
