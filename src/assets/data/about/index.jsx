@@ -59,14 +59,14 @@ import maria from '../../imgs/about/members/maria.png'
 
 export const MEMBERS = [
   {
-    name: "MARIA VILLAREAL",
+    name: "MARIA MERNES",
     tag: "PRESIDENTE",
     image: maria,
     icon_options: [
       { icon: <BsInstagram /> },
       { icon: <BsWhatsapp /> },
       { icon: <BsFacebook /> },
-      { icon: <BsYoutube /> },
+
     ],
   },
   /* {

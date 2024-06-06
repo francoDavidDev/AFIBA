@@ -9,7 +9,7 @@ import { ICONS_NETWORKING } from "../../data/header";
 
 const Footer = () => {
   return (
-    <footer className="w-full  h-auto py-5 bg-primary-300 ">
+    <footer className="w-full mt-10  h-auto py-5 bg-primary-300 ">
        <div className=" bg-[#0f4571] flex justify-end items-center w-full gap-10 text-2xl  pr-10 h-10 text-neutral-100 font-semibold tracking-widest  ">
       {ICONS_NETWORKING.map((item,i)=>{
         return(

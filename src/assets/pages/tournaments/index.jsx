@@ -54,32 +54,18 @@ const Tournaments = () => {
           <h2 className="h2"> TORNEOS AFIBA </h2>
         </div>
 
-        <div className="h-[600px] w-full  bg-cover bg-top bg-no-repeat rounded-xl  overflow-hidden">
-          <img src={image} className="w-full h-[150%] rounded-xl" alt="" />
+        <div className="h-[300px] md:h-[600px] w-full  bg-cover bg-top bg-no-repeat rounded-xl  overflow-hidden"
+        style={{backgroundImage:`url('${image}')` }}>
+         
         </div>
-        <div className="w-full  flex justify-between items-start">
-          <div className="flex gap-5 ">
-            {ICONS_NETWORKING.map((item, i) => {
-              return (
-                <a
-                  key={i}
-                  href="#"
-                  className="text-xl text-center bg-neutral-100 rounded-full w-[30px] h-[30px]  flex justify-center items-center hover:scale-110 hover:text-primary-300 hover:text-2xl
-              transition-all "
-                >
-                  {item.icon}
-                </a>
-              );
-            })}
-          </div>
-        </div>
+      
 
-        <div className=" py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-2  gap-5 m-auto">
+        <div className=" py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-2  gap-10 md:gap-5 m-auto">
           {TOURNAMENTS.map((item, i) => {
             return (
               <div
                 key={i}
-                className="bg-black w-[1fr] h-[400px]  rounded-xl flex flex-col justify-center  bg-center bg-cover bg-no-repeat "
+                className="bg-black w-[1fr] h-[300px] md:h-[400px]  rounded-xl flex flex-col justify-center  bg-center bg-cover bg-no-repeat "
                 style={{ backgroundImage: `url('${item.image}')` }}
               >
                 {" "}

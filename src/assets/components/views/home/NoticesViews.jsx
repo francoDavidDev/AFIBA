@@ -90,59 +90,7 @@ const NoticesViews = () => {
       {/* sponsors */}
      <Sponsors/>
 {/* inscription and rules */}
-{title !== 'CALENDARIO' ?   <div className="  py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-3  gap-[2px] m-auto">
-        <div
-          className=" w-[1fr] h-[300px]   flex flex-col justify-center cursor-pointer bg-center bg-cover  bg-no-repeat  "
-          style={{ backgroundImage: `url(${rules}) ` }}
-        >
-          <motion.div
-            onMouseEnter={() => anime(1)}
-            onMouseLeave={() => anime(1)}
-            className="w-full h-full flex flex-col gap-y-5 justify-center items-center  hover:bg-black/50 transition-all "
-          >
-            <motion.button
-              variants={btn_animation}
-              animate={animation}
-              transition={{ duration: 0.2 }}
-              whileHover={{scale:1.2}}
-              className="btn"
-            >
-              VER REGLAS
-            </motion.button>
-            <motion.button
-             variants={btn_animation}
-             animate={animation}
-             whileHover={{scale:1.2}}
-             transition={{ duration: 0.2, delay:0.1 }}
-            className="btn">DESCARGAR REGLAS</motion.button>
-          </motion.div>
-        </div>
-        <div className="bg-black w-[1fr] h-[300px]   flex flex-col justify-center  bg-center bg-cover bg-no-repeat  ">
-        <img src={afibaGif} alt="logo afiba" className="w-[60%] h-full  m-auto " />
-        </div>
-        <motion.div
-          className="bg-violet-500 w-[1fr] h-[300px]   flex flex-col justify-center cursor-pointer bg-center bg-cover bg-no-repeat  "
-          style={{ backgroundImage: `url(${registration}) ` }}
-        >
-           <motion.div
-            onMouseEnter={() => anime(2)}
-            onMouseLeave={() => anime(2)}
-            className="w-full h-full flex flex-col gap-y-5 justify-center items-center  hover:bg-black/50 transition-all" 
-          >
-            <motion.button
-              variants={btn_animation2}
-              animate={animation2}
-              transition={{ duration: 0.2 }}
-              whileHover={{scale:1.2}}
-              className="btn"
-            >
-              INSCRIBIRSE
-            </motion.button>
-         
-          </motion.div>
-        </motion.div>
-      </div>: null }
-    
+
     </section>
   );
 };
