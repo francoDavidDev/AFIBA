@@ -29,15 +29,15 @@ import calendario from "../../imgs/home/notices/calendario.jpg";
 
 export const NOTICES = [
   {
-    id: "1",
+    id: "2",
     title: "CALENDARIO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: calendario,
   },
   {
-    id: "2",
-    title: "titulo de noticia o evento proximo",
+    id: "1",
+    title: "Copa Independencia",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: image1,

@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 
+/*  bg-gradient-to-t from-[#001A00] via-[#001A00] to-[#003300]   */
 
-
-@layer base {
+@layer base {  
   body {
-    @apply font-primary text-neutral-200 bg-gradient-to-b from-[#001A00] to-[#003300] ;
+    @apply font-primary text-neutral-200 bg-[#151515]  ;
   }
   p,
  h1,

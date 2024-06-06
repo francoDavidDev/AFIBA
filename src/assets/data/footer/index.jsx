@@ -1,15 +1,11 @@
-import { FaInstagram } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { AiFillTikTok } from "react-icons/ai";
+import { FaFacebook,FaInstagram,FaWhatsapp  } from "react-icons/fa";
+
 
 
 
 export const SOCIAL_MEDIA = [
-    {icon:FaInstagram},
-    {icon:FaTwitter},
-    {icon:FaFacebookF},
-    {icon:FaYoutube},
-    {icon:AiFillTikTok},
+    {icon:<FaWhatsapp/>, href:"https://wa.me/1128729216"},
+    {icon:<FaInstagram/>, href:'https://www.instagram.com/afibaoficial/?hl=es'},
+    {icon:<FaFacebook/>, href:'https://www.facebook.com/AsociacionFisicoculturistasDeBuenosAires/?locale=es_LA'},
 ]
+

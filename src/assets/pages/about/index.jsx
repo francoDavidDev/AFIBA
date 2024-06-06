@@ -1,14 +1,26 @@
 import React, { useEffect, useState } from "react";
 import banner from "../../imgs/about/staff/banner.png";
-import { motion, useAnimate } from "framer-motion";
+import { motion, useAnimate, useCycle } from "framer-motion";
 import { ReactTyped } from "react-typed";
+import { FaArrowRight } from "react-icons/fa";
+
 
 import Info from "../../components/about/Info";
 import Members from "../../components/about/Members";
 import Gallery from "../../components/about/Gallery";
+import { Link } from "react-router-dom";
 
 const About = () => {
-  // Definimos un componente de función llamado About
+  const [animation, cycleAnimation] = useCycle("hidden", "visible");
+
+  const variantes = {
+    hidden: {
+      x: 0,
+    },
+    visible: {
+      x: 20,
+    },
+  };
 
   return (
     <motion.section
@@ -19,10 +31,23 @@ const About = () => {
     whileInView={{ y: 0, opacity: 1 }}
     transition={{ ease: "easeOut", duration:0.5 }}
     className="w-full h-auto   flex flex-col justify-center gpy">
-      <div
-        className="w-full  h-[100vh] flex flex-col-reverse bg-center bg-no-repeat bg-cover "
-        style={{ backgroundImage: `url('${banner}')` }}
-      ></div>
+      {/* hero */}
+      <div className="h-auto w-full flex flex-col  ">
+      <div className="md:bg-gradient-to-l md:from-black  md:to-primary-300 bg-gradient-to-t from-black  to-primary-300   w-full   h-[auto]  flex flex-col-reverse lg:flex-row justify-center items-center   ">
+        <div className="w-full  lg:w-[40%] flex flex-col text-center gap-y-8 px-5 py-10 lg:py-0  ">
+          <h2 className="h3 font-bold  text-primay-100">
+          ¿QUIENES SOMOS? 
+          </h2>
+        ¿
+        
+        </div>
+        {/* VIDEO */}
+        <div className="w-full  lg:w-[60%] m-auto  h-full   overflow-hidden  ">
+         <img src={banner} alt="" />
+        </div>
+        {/* <Carrousel />*/}
+      </div>
+    </div>
 
       {/* Contenedor de texto/banner */}
       <div className="w-full h-auto  flex">
@@ -35,23 +60,20 @@ const About = () => {
            whileInView={{ y: 0, opacity: 1 }}
            transition={{ ease: "easeOut" }}
           className="text-center my-10 flex flex-col gap-y-10">
-            <h1 className="h1 text-primary-300">AFIBA</h1>
-            <p className=" w-[90%] md:w-[70%]  text-md md:text-2xl text-left m-auto leading-relaxed tracking-[4px] font-light">
-              <span className="text-primary-300 ">
-               AFIBA
+            <h1 className="h1 0">AFIBA</h1>
+            <h4 className=" w-[90%] h4   text-center m-auto leading-relaxed tracking-[4px]">
+              EN 
+              <span className="0 ">
+              {" "} AFIBA
               </span>{" "}
-              es una organización dedicada al desarrollo y promoción del deporte
-              del fisicoculturismo en nuestra comunidad y más allá. Como la
-              autoridad líder en el fisicoculturismo en nuestra región, nos
-              esforzamos por fomentar un ambiente inclusivo y accesible para
-              atletas de todos los niveles de experiencia y habilidad.
-            </p>
+              SOMOS LÍDERES EN FISICOCULTURISMO, PROMOVIENDO ESTE DEPORTE EN NUESTRA COMUNIDAD Y MÁS ALLÁ. NOS ESFORZAMOS POR CREAR UN AMBIENTE INCLUSIVO Y ACCESIBLE PARA ATLETAS DE TODOS LOS NIVELES.
+            </h4>
           </motion.div>
           {/* Texto animado */}
           <h4 className="text-center py-5 tracking-widest">
             SOMOS EL EJEMPLO DE...
           </h4>
-          <h4 className="h4 text-primary-300 text-center">
+          <h4 className="h4 0 text-center">
             <ReactTyped
               className="md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2"
               strings={["DEDICACION", "CONTANCIA", "DISCIPLINA"]}

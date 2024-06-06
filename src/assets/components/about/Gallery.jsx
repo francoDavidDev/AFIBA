@@ -14,7 +14,7 @@ const Gallery = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeOut",delay:0.3 }}
       className=" w-full flex   justify-start items-center gap-5 ">
-        <h4 className=" h4 uppercase py-10   text-primary-300  flex  justify-start items-center gap-5">
+        <h4 className=" h4 uppercase py-10   text-primary-100  flex  justify-start items-center gap-5">
           GALERIA{" "}
           <span>
             {" "}

@@ -20,7 +20,7 @@ const BannerSecondary = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full h-full flex justify-center items-center ">
+      <div  className="w-full h-full flex justify-center items-center  overflow-x-auto">
         <div
           className="w-full h-[250px] overflow-hidden bg-yellow-500 bg-top md:bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: `url('${banner}')` }}

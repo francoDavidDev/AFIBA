@@ -19,11 +19,11 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          100: '#004700',
-          200: '#F2F2F2',
+          100: '#114232', //verde
+          200: '#EEF7FF',
           300: '#0f4571', //azul
           400:'#f70808', //rojo
-          500:'#ffffff'//negro
+          500:'#3D3B40'//negro
         },
         neutral: {
           100: '#ffffff',

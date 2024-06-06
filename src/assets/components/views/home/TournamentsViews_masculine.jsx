@@ -60,22 +60,7 @@ const TournamentsViews_masculine = () => {
          style={{ backgroundImage: `url('${image}')` }}>
        
         </div>
-        <div className="w-full  flex justify-between items-start">
-          <div className="flex gap-5 ">
-            {ICONS_NETWORKING.map((item, i) => {
-              return (
-                <a
-                  key={i}
-                  href="#"
-                  className="text-xl text-center bg-neutral-100 rounded-full w-[30px] h-[30px]  flex justify-center items-center hover:scale-110 hover:text-primary-300 hover:text-2xl
-              transition-all "
-                >
-                  {item.icon}
-                </a>
-              );
-            })}
-          </div>
-        </div>
+     
 
         <div className=" py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-2  gap-5 m-auto">
         {TOURNAMENTS.map((item, i) => {

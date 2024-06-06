@@ -13,7 +13,7 @@ import BannerMain from "../../components/home/BannerMain";
 const Home = () => {
   return (
     <section className=" ">
-        <BannerMain />
+      <BannerMain />
       
       <Notices />
       {/* carrousel sponsors */}

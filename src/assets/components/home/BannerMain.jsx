@@ -22,7 +22,7 @@ const CarrouselMain = () => {
         </div>
       </div>
       <div className="w-full h-full flex justify-center items-center ">
-      <div className="w-1/3 h-full overflow-hidden bg-yellow-500">
+      <div className="w-1/3 h-full overflow-hidden ">
         <video
           className="w-full h-full scale-150"
           autoPlay
@@ -31,7 +31,7 @@ const CarrouselMain = () => {
           src={video}
         ></video>
       </div>
-      <div className="w-1/3 h-full overflow-hidden bg-yellow-500">
+      <div className="w-1/3 h-full overflow-hidden ">
         <video
           className="w-full h-full scale-150"
           autoPlay
@@ -40,7 +40,7 @@ const CarrouselMain = () => {
           src={video2}
         ></video>
       </div>
-      <div className="w-1/3 h-full overflow-hidden bg-yellow-500">
+      <div className="w-1/3 h-full overflow-hidden ">
         <video
           className="w-full h-full scale-150"
           autoPlay

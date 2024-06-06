@@ -117,6 +117,7 @@ const Notices = () => {
             if (item.id !== "1") {
               return (
                 <Link
+                key={i}
                 to={`/NoticesViews/${item.id}`}
                   className="w-full  md:w-[45%] sm:w-full  h-[200px]  md:h-[400px] overflow-hidden rounded-xl    flex flex-col justify-center cursor-pointer  hover:-translate-y-1 duration-200  hover:rounded-xl bg-bottom bg-cover bg-no-repeat "
                   style={{ backgroundImage: `url('${item.image}')` }}

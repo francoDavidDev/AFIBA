@@ -58,21 +58,7 @@ const NoticesViews = () => {
         >
      
         </div>
-        <div className="w-full  flex justify-between items-start">
-          <div className="bg-primary-300 px-4 hover:-translate-y-1 transition-all hover:shadow-black ">
-            <a href="#" className="h5 text-neutral-100"> RESULTADOS</a>
-          </div>
-          <div className="flex gap-5 ">
-            {ICONS_NETWORKING.map((item, i) => {
-              return (
-                <a href="#" className="text-xl text-center bg-neutral-100 rounded-full w-[30px] h-[30px]  flex justify-center items-center hover:scale-110 hover:text-primary-300 hover:text-2xl
-              transition-all ">
-                  {item.icon}
-                </a>
-              );
-            })}
-          </div>
-        </div>
+     
       </div>
 
       {/* informacion */}

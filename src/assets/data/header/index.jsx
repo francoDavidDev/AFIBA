@@ -1,7 +1,7 @@
 export const NAV = [
     { name: "INICIO", href: "/" },
     { name: "NOSOTROS", href: "/about" },
-    { name: "CALENDARIO", href: "/NoticesViews/1" },
+    { name: "CALENDARIO", href: "/NoticesViews/2" },
   
     {
       /*   { name: "Reglamentos", href: "contact" },
@@ -13,7 +13,7 @@ export const NAV = [
   import { FaFacebook,FaInstagram,FaWhatsapp  } from "react-icons/fa";
 
   export const ICONS_NETWORKING=[
-    {icon:<FaWhatsapp/>, href:'#'},
-    {icon:<FaInstagram/>, href:'#'},
-    {icon:<FaFacebook/>, href:'#'},
+    {icon:<FaWhatsapp/>, href:"https://wa.me/1128729216"},
+    {icon:<FaInstagram/>, href:'https://www.instagram.com/afibaoficial/?hl=es'},
+    {icon:<FaFacebook/>, href:'https://www.facebook.com/AsociacionFisicoculturistasDeBuenosAires/?locale=es_LA'},
   ]

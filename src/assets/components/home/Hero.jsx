@@ -20,14 +20,13 @@ const Hero = () => {
 
   return (
     <section className="h-auto w-full flex flex-col  text-neutral-100">
-      <div className="md:bg-gradient-to-l md:from-black  md:to-primary-300 bg-gradient-to-t from-black  to-primary-300   w-full   h-[auto]  flex flex-col-reverse lg:flex-row justify-center items-center   ">
+      <div className="md:bg-gradient-to-l md:from-black  md:to-primary-100 bg-gradient-to-t from-black  to-primary-300   w-full   h-[auto]  flex flex-col-reverse lg:flex-row justify-center items-center   ">
         <div className="w-full  lg:w-[40%] flex flex-col text-center gap-y-8 px-5 py-10 lg:py-0  ">
           <h2 className="h2 font-bold  text-neutral-100">
-            PARTICIPA EN LOS TORNEOS AFIBA
+            TORNEOS
           </h2>
           <p className="text-neutral-100 text-2xl ">
-            Compre o registre su interés en entradas y hospitalidad para los
-            próximos torneos AFIBA
+            MIRA EL CALENDARIO E INSCRIBETE A LOS TORNEOS DE AFIBA
           </p>
           <motion.button
             whileHover={{ scale: 1.2 }}
@@ -35,7 +34,7 @@ const Hero = () => {
             onHoverEnd={(e) => {}}
             onMouseEnter={() => cycleAnimation()}
             onMouseLeave={() => cycleAnimation()}
-            className="flex items-center btn bg-green-800 rounded-3xl  border-none w-[%] m-auto gap-3 "
+            className="flex items-center btn bg-primary-00 rounded-3xl bg-gradient-to-r from-black/70  to-primary-300 border-none w-[%] m-auto gap-3 "
           >
             <Link to={`/Tournaments`} >
               {" "}

@@ -34,7 +34,7 @@ const Header = () => {
       <div className=" bg-[#0f4571] flex justify-end items-center w-full gap-10 text-2xl  pr-10 h-10 text-neutral-100 font-semibold tracking-widest  ">
       {ICONS_NETWORKING.map((item,i)=>{
         return(
-          <motion.a initial  animate={{x:20}} href={item.href}>
+          <motion.a  initial  animate={{x:20}} target="_blank"  href={item.href}>
             {item.icon}
           </motion.a>
         )

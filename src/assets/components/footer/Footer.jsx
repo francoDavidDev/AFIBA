@@ -4,21 +4,20 @@ import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
+import {motion} from 'framer-motion'
+import { ICONS_NETWORKING } from "../../data/header";
 
 const Footer = () => {
   return (
     <footer className="w-full  h-auto py-5 bg-primary-300 ">
-      <div className=" w-[90%] m-auto flex  py-1 items-start justify-between flex-row text-white  " >
-        <h2 className="h4 text-white ">AFIBA</h2>
-        <p className="text-[12px] flex items-start justify-start text-white ">&copy;</p>
-
-        <div className="flex justify-end  items-center w-full text-3xl m-auto  gap-5 text-">
-          <FaInstagram  className="hover:text-primary-400 hover:scale-110 transition-all duration-300 cursor-pointer"/>
-          <FaTwitter className="hover:text-primary-400 hover:scale-110 transition-all duration-300 cursor-pointer" />
-          <FaFacebookF className="hover:text-primary-400 hover:scale-110 transition-all duration-300 cursor-pointer" />
-          <FaYoutube className="hover:text-primary-400 hover:scale-110 transition-all duration-300 cursor-pointer" />
-          <AiFillTikTok className="hover:text-primary-400 hover:scale-110 transition-all duration-300 cursor-pointer" />
-        </div>
+       <div className=" bg-[#0f4571] flex justify-end items-center w-full gap-10 text-2xl  pr-10 h-10 text-neutral-100 font-semibold tracking-widest  ">
+      {ICONS_NETWORKING.map((item,i)=>{
+        return(
+          <motion.a key={i} initial  animate={{x:20}} target="_blank"  href={item.href}>
+            {item.icon}
+          </motion.a>
+        )
+      })}
       </div>
       <div className="w-full h-[2px] bg-primary-400 " ></div>
 

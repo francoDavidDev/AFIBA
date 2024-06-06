@@ -19,7 +19,7 @@ const Nav = () => {
               key={index}
               className="hover:text-primary-400  text-sm cursor-pointer transition-all duration-100"
             >
-              <Link to={item.href}>{item.name}</Link>
+              <Link to={item.href} >{item.name}</Link>
             </li>
           );
         })}
