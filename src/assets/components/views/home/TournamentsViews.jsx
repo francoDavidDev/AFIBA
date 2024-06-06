@@ -21,7 +21,7 @@ import Sponsors from "../../Sponsors";
 const TournamentsViews = () => {
   const { id } = useParams();
   const item = TOURNAMENTS.find((item) => item.id === id);
-  const { title, image, description, images } = item;
+  const { title, image, description, images, rules } = item;
   const [animation, cycleAnimation] = useCycle("initial", "animate");
   const [animation2, cycleAnimation2] = useCycle("initial", "animate");
 
@@ -104,18 +104,25 @@ const TournamentsViews = () => {
           <div className="w-full lg:w-1/2">
             <h2 className="text-2xl font-bold mb-4">¿QUÉ ES {title}?</h2>
             <p className="text-lg xl:text-xl tracking-wider font-light">{description}</p>
+            <a
+              href={rules}
+              download={rules}
+              className="inline-block mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
+            >
+              Descargar Reglas
+            </a>
           </div>
         </div>
       </div>
 
       {/* Image Carousel */}
-      <div className="w-full h-[600px] flex flex-col">
-        <h4 className="text-2xl text-center mb-6">IMÁGENES</h4>
+      <div className="w-full flex flex-col">
+        <h4 className="h4 text-2xl text-center mb-6">IMÁGENES</h4>
         <Slider {...settings} className="slick-slide_themes">
           {images.map((item, i) => (
             <div key={i} className="flex justify-center items-center">
               <div
-                className="rounded-xl m-1 overflow-hidden w-[90%] h-[500px] cursor-pointer bg-no-repeat bg-cover bg-center"
+                className="rounded-xl m-1 overflow-hidden w-[90%] h-[400px] cursor-pointer bg-no-repeat bg-cover bg-center"
                 style={{ backgroundImage: `url('${item.image}')` }}
                 onClick={() => openModal(item.image)}
               >
@@ -129,56 +136,21 @@ const TournamentsViews = () => {
         </Slider>
       </div>
 
-      {/* Registration and Rules Section */}
-      <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-6 m-auto">
-  <div
-    className="h-[300px] flex flex-col justify-center cursor-pointer bg-cover bg-center bg-no-repeat rounded-lg shadow-lg transition-transform transform hover:scale-105"
-    style={{ backgroundImage: `url(${rules})` }}
-  >
-    <motion.div className="w-full h-full flex flex-col gap-y-5 justify-center items-center bg-black/60 p-6 rounded-b-lg transition-all">
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3, delay: 0.1 }}
-        className="btn py-2 px-6 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors"
-      >
-        DESCARGAR REGLAS
-      </motion.button>
-    </motion.div>
-  </div>
-  <div className="bg-black h-[300px] flex justify-center items-center rounded-lg shadow-lg">
-    <img src={afibaGif} alt="logo afiba" className="w-[70%] h-auto object-contain" />
-  </div>
-  <motion.div
-    className="h-[300px] flex flex-col justify-center cursor-pointer bg-cover bg-center bg-no-repeat rounded-lg shadow-lg transition-transform transform hover:scale-105"
-    style={{ backgroundImage: `url(${registration})` }}
-  >
-    <motion.div className="w-full h-full flex flex-col gap-y-5 justify-center items-center bg-black/60 p-6 rounded-b-lg transition-all">
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3 }}
-        className="btn py-2 px-6 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors"
-      >
-        INSCRIBIRSE
-      </motion.button>
-    </motion.div>
-  </motion.div>
-</div>
-
-
       {/* Sponsors Section */}
       <Sponsors />
 
       {/* Modal Section */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-          <div className="relative w-[80%] md:w-[60%] lg:w-[40%] bg-white rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-[80%] md:w-[60%] h-[90vh] lg:w-[40%] bg-primary-100 rounded-lg overflow-hidden shadow-lg"
+          >
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-2xl text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center"
             >
               &times;
             </button>
-            <img src={selectedImage} className="w-full h-full object-cover" alt="Enlarged" />
+            <img src={selectedImage} className="w-full h-full object-contain" alt="Enlarged" />
           </div>
         </div>
       )}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import banner from "../../imgs/home/bannerSecondary3/BANNER.jpg";
+import banner from "../../imgs/home/bannerSecondary/BANNER.jpg";
 import { Link } from "react-router-dom";
 
 const BannerSecondary3 = () => {
@@ -18,11 +18,11 @@ const BannerSecondary3 = () => {
     <div className="h-auto w-full flex flex-col md:flex-row justify-center items-center bg-gradient-to-t from-black to-green-900">
       {/* Text Section */}
       <div className="md:w-1/2 w-full py-10 md:py-0 flex flex-col justify-center items-center gap-5">
-        <h4 className="text-2xl md:text-4xl text-center text-neutral-100">MODALIDAD FEMENINA</h4>
+        <h4 className="text-2xl md:text-4xl text-center text-neutral-100">MODALIDAD MASCULINA</h4>
         <p className="text-lg md:text-base text-center text-neutral-100 line-clamp-5">
-          CATEGORÍA DE MUJERES
+          CATEGORÍA DE HOMBRES
         </p>
-        <Link to={"/TournamentsViews_female"}>
+        <Link to={"/TournamentsViews_masculine"}>
           <button className="bg-transparent border-2 border-neutral-100 text-neutral-100 rounded-3xl py-2 px-6 hover:bg-neutral-100 hover:text-black transition duration-200">
             VER MÁS
           </button>

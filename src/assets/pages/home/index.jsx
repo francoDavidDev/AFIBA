@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Hero from "../../components/home/Hero";
 import Notices from "../../components/home/Notices";
 import SponsorsCarrousel from "../../components/home/SponsorsCarrousel";
@@ -12,27 +13,60 @@ import BannerMain from "../../components/home/BannerMain";
 import Calendar from "../calendar/Calendar";
 import HomeCalendar from "../../components/home/HomeCalendar";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.2 } }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0 }
+};
+
 const Home = () => {
   return (
-    <section className=" ">
-      <BannerMain />
+    <motion.section
+      className="home-container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.div variants={itemVariants}>
+        <BannerMain />
+      </motion.div>
       
-      <Notices />
-      {/* Calendar */}
-      <HomeCalendar/>
-      {/* carrousel sponsors */}
-      <SponsorsCarrousel />
-
-     {/* afiba banner */}
-    <Hero />
-      {/* gimnasios */}
-      <CarrouselStore />
-      <BannerSecondary />
- 
-     {/* torneos */}
-      <CarrouselThemes />
-      <BannerSecondary3 />
-    </section>
+      <motion.div variants={itemVariants}>
+        <Notices />
+      </motion.div>
+      
+      <motion.div variants={itemVariants}>
+        <HomeCalendar />
+      </motion.div>
+      
+      <motion.div variants={itemVariants}>
+        <SponsorsCarrousel />
+      </motion.div>
+      
+      <motion.div variants={itemVariants}>
+        <Hero />
+      </motion.div>
+      
+      <motion.div variants={itemVariants}>
+        <CarrouselStore />
+      </motion.div>
+      
+      <motion.div variants={itemVariants}>
+        <BannerSecondary />
+      </motion.div>
+      
+      <motion.div variants={itemVariants}>
+        <CarrouselThemes />
+      </motion.div>
+      
+      <motion.div variants={itemVariants}>
+        <BannerSecondary3 />
+      </motion.div>
+    </motion.section>
   );
 };
 

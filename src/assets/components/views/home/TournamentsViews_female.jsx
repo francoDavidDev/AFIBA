@@ -1,21 +1,22 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-// import motiopn
+// Import motion from framer-motion
 import { motion, useCycle } from "framer-motion";
-//import image/videos
+// Import image
 import image from "../../../imgs/home/bannerSecondary3/BANNER.jpg";
+
 
 
 import { TOURNAMENTS } from "../../../data/tournaments";
 import Sponsors from "../../Sponsors";
-import { ICONS_NETWORKING } from "../../../data/header";
 
 const TournamentsViews_female = () => {
+  const [filter, setFilter] = useState("femenino");
+
   const downloadFileAtURL = (url) => {
     fetch(url)
       .then((response) => response.blob())
@@ -31,79 +32,77 @@ const TournamentsViews_female = () => {
       });
   };
 
+  const filteredTournaments = filter === "All" ? TOURNAMENTS : TOURNAMENTS.filter(tournament => tournament.tag === filter);
+
   const btn_animation = {
     initial: { scale: 0 },
     animate: {
       scale: 1,
     },
   };
-  const btn_animation2 = {
-    initial: { scale: 0 },
-    animate: {
-      scale: 1,
-    },
-  };
-
-  const anime = (v) => {
-    v === 1 ? cycleAnimation() : cycleAnimation2();
-  };
 
   return (
     <section className="w-full flex flex-col justify-center h-auto items-center m-auto gap-y-10">
       <div className="w-[90%] h-auto py-20 flex flex-col justify-center items-center gap-y-7 ">
-        <div className="w-full m-auto  text-center ">
-          <h2 className="h2"> MODALIDAD FEMENINA </h2>
+        <div className="w-full m-auto text-center">
+          <h2 className="h2">TORNEOS AFIBA FEMENINO</h2>
         </div>
 
-        <div className="h-[300px] w-full  bg-cover bg-center bg-no-repeat rounded-xl  overflow-hidden"
-         style={{ backgroundImage: `url('${image}')` }}>
+        <div className="h-[300px] md:h-[400px] w-full bg-cover bg-top bg-no-repeat rounded-xl overflow-hidden"
+          style={{ backgroundImage: `url('${image}')` }}>
+        </div>
+
+        <div className="flex justify-center items-center gap-4 mb-10">
+          
+          <button
+            className={`py-2 px-4 rounded-lg ${filter === "femenino" ? "bg-green-500 text-white" : "bg-gray-200 text-black"}`}
+            onClick={() => setFilter("femenino")}
+          >
+            Femenino
+          </button>
+         
        
         </div>
-      
 
-        <div className=" py-20  w-full  mt-1 2 grid  grid-cols-1 sm:grid-cols-2  gap-5 m-auto ">
-        {TOURNAMENTS.map((item, i) => {
-  if (item.tag === 'femenino') {
-    return (
-      <div
-        key={i}
-        className="bg-black w-[1fr] h-[400px]  rounded-xl flex flex-col justify-center  bg-center bg-cover bg-no-repeat "
-        style={{ backgroundImage: `url('${item.image}')` }}
-      >
-        {" "}
-        <h4 className="h4 h-[100vh] text-primary-200 text-center rounded-xl pt-5 bg-gradient-to-b from-black  to-white/0 ">
-          {" "}
-          {item.title}{" "}
-        </h4>
-        <div className="w-full h-[100vh] pb-[50px] gap-y-5 flex rounded-xl justify-end items-center flex-col  bg-gradient-to-t from-black  to-white/0">
-          <div className="w-full flex justify-around items-center">
-            <div
-              className=" "
-              onClick={() => {
-                downloadFileAtURL(item.rules);
-              }}
+        <div className="py-20 w-full mt-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-5 m-auto">
+  {filteredTournaments.map((item, i) => (
+    <div
+      key={i}
+      className="bg-black w-full h-[300px] md:h-[400px] rounded-lg flex flex-col justify-center bg-center bg-cover bg-no-repeat shadow-md transition-shadow duration-300 hover:shadow-xl"
+      style={{ backgroundImage: `url('${item.image}')` }}
+    >
+      <h4 className="text-lg md:text-xl text-primary-200 text-center py-4 bg-gradient-to-b from-black to-transparent rounded-t-lg">
+        {item.title}
+      </h4>
+      <div className="w-full h-full p-4 flex flex-col justify-end bg-gradient-to-t from-black to-transparent rounded-b-lg">
+        <div className="w-full flex justify-around items-center mt-4">
+          <div
+            className="cursor-pointer hover:text-primary-400 transition-all"
+            onClick={() => {
+              downloadFileAtURL(item.rules);
+            }}
+          >
+            <h5 className="text-md hover:scale-105 transition-transform">
+              REGLAS
+            </h5>
+          </div>
+          <div>
+            <Link
+              to={`/TournamentsViews/${item.id}`}
+              className="text-md text-primary-200 hover:text-primary-400 transition-all cursor-pointer hover:scale-105"
             >
-              <h5 className="h5 hover:text-primary-400 transition-all cursor-pointer  hover:scale-110">
-                REGLAS
-              </h5>
-            </div>
-            <div className="   ">
-              <Link to={`/TournamentsViews/${item.id}`} className="h5 text-primary-200 hover:text-primary-400 transition-all  cursor-pointer hover:scale-110">
-                VER MAS
-              </Link>
-            </div>
+              VER MÁS
+            </Link>
           </div>
         </div>
       </div>
-    );
-  } else {
-    return null;
-  }
-})}
-        </div>
+    </div>
+  ))}
+</div>
+
       </div>
 
-      {/* sponsors */}
+      {/* Sponsors */}
       <Sponsors />
     </section>
   );
