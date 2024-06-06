@@ -3,10 +3,9 @@ import React from "react";
 
 export const NAV = [
   { name: "INICIO", href: "/" },
-  { name: "NOSOTROS", href: "/About" },
-
-
-  { name: "CALENDARIO", href: "/NoticesViews/1" },
+  { name: "NOSOTROS", href: "/about" },
+  { name: "CALENDARIO", href: "/Calendar" },
+  { name: "RESULTADOS", href: "/Results" },
 
   {
     /*   { name: "Reglamentos", href: "contact" },
