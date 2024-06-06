@@ -2,6 +2,7 @@ import React, { useEffect, lazy, Suspense } from "react";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import LoadingScreen from "./assets/components/LoadingScreen";
+import Results from "./assets/components/Results";
 
 // Importa componentes de forma diferida
 const Header = lazy(() => import('./assets/components/header/Header'));
@@ -53,6 +54,7 @@ const AnimatedRoutes = () => {
         <Route path="/TournamentsViews_masculine" element={<PageWrapper component={<TournamentsViews_masculine />} />} />
         <Route path="/TournamentsViews_female" element={<PageWrapper component={<TournamentsViews_female />} />} />
         <Route path="/TournamentsForm" element={<PageWrapper component={<TournamentsForm />} />} />
+        <Route path="/Results" element={<PageWrapper component={<Results />} />} />
       </Routes>
     </AnimatePresence>
   );

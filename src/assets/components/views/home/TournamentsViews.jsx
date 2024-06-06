@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // Import css files
 import "slick-carousel/slick/slick.css";
@@ -104,13 +104,21 @@ const TournamentsViews = () => {
           <div className="w-full lg:w-1/2">
             <h2 className="text-2xl font-bold mb-4">¿QUÉ ES {title}?</h2>
             <p className="text-lg xl:text-xl tracking-wider font-light">{description}</p>
-            <a
-              href={rules}
-              download={rules}
-              className="inline-block mt-4 px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
-            >
-              Descargar Reglas
-            </a>
+            <div className="mt-4">
+              <a
+                href={rules}
+                download={rules}
+                className="inline-block px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg mr-4"
+              >
+                Descargar Reglas
+              </a>
+              <Link
+                to={`/Resultados/${id}`}
+                className="inline-block px-6 py-2 text-white bg-green-600 hover:bg-green-700 rounded-lg"
+              >
+               Descargar Resultados
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -142,8 +150,7 @@ const TournamentsViews = () => {
       {/* Modal Section */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-          <div className="relative w-[80%] md:w-[60%] h-[90vh] lg:w-[40%] bg-primary-100 rounded-lg overflow-hidden shadow-lg"
-          >
+          <div className="relative w-[80%] md:w-[60%] h-[90vh] lg:w-[40%] bg-primary-100 rounded-lg overflow-hidden shadow-lg">
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-2xl text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center"
