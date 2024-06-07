@@ -6,7 +6,7 @@ import Sponsors from "../Sponsors";
 const SponsorsCarrousel = () => {
 
   return (
-    <section className=" h-[500px] md:h-[600px] pt-10 ">
+    <section className=" h-[500px] md:h-[600px] pt-10   mb-20 ">
       <div className="p-5 ">
         <h4 className="h4 font-black  "> SPONSORS</h4>
       </div>

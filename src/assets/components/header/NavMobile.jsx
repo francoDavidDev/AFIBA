@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 //import { Link } from "react-scroll";
-import { NAV } from "../../../data";
+
 import { Link } from "react-router-dom";
+import { NAV } from "../../data/header";
 
 const NavMobile = ({ navMobile, setNavMobile }) => {
 
