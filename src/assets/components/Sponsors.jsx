@@ -11,7 +11,7 @@ const Sponsors = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    arrows: true,
+    arrows: false,
     centerMode: true,
     centerPadding: '0',
     responsive: [
@@ -50,8 +50,8 @@ const Sponsors = () => {
   };
 
   return (
-    <div className="w-full lg:w-full b py-10">
-      <h3 className="text-3xl font-bold text-center mb-6">Nuestros Patrocinadores</h3>
+    <div className="w-full lg:w-full ">
+      
       <Slider {...settings} className="slick-slider">
         {SPONSORS.map((item, i) => (
           <motion.div
