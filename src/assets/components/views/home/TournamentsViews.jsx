@@ -9,10 +9,7 @@ import Slider from "react-slick";
 // Import motion from framer-motion
 import { motion, useCycle } from "framer-motion";
 
-// Import images/videos
-import rules from "../../../imgs/notice/reglas.png";
-import registration from "../../../imgs/notice/registration.png";
-import afibaGif from "../../../videos/afibaGif.gif";
+
 
 // Import data and components
 import { TOURNAMENTS } from "../../../data/tournaments";
@@ -104,21 +101,7 @@ const TournamentsViews = () => {
           <div className="w-full lg:w-1/2">
             <h2 className="text-2xl font-bold mb-4">¿QUÉ ES {title}?</h2>
             <p className="text-lg xl:text-xl tracking-wider font-light">{description}</p>
-            <div className="mt-4">
-              <a
-                href={rules}
-                download={rules}
-                className="inline-block px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg mr-4"
-              >
-                Descargar Reglas
-              </a>
-              <Link
-                to={`/Resultados/${id}`}
-                className="inline-block px-6 py-2 text-white bg-green-600 hover:bg-green-700 rounded-lg"
-              >
-               Descargar Resultados
-              </Link>
-            </div>
+     
           </div>
         </div>
       </div>

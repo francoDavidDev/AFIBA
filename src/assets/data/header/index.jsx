@@ -3,7 +3,8 @@ export const NAV = [
     { name: "NOSOTROS", href: "/about" },
     { name: "CALENDARIO", href: "/Calendar" },
     { name: "RESULTADOS", href: "/Results" },
-    { name: "REGLAMENTOS & TORNEOS", href: "/Tournaments" },
+    { name: "TORNEOS", href: "/Tournaments" },
+    { name: "REGLAMENTOS", href: "/Rules" },
 
 
     {
