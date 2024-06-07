@@ -86,7 +86,7 @@ export const MEMBERS = [
     ],
   },
   {
-    name: "OSCAR MENDEZ",
+    name: "OSCAR VILLAREAL",
     tag: "VICEPRESIDENTE",
     image: Oscar_Villarreal_Alta_resolucion,
     icon_options: [
