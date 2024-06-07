@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TOURNAMENTS } from "../../data/tournaments";
+import { motion } from "framer-motion";
 
 const Rules = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -36,27 +37,30 @@ const Rules = () => {
             placeholder="Buscar por nombre..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black" // Added text-black class
+            className="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
           />
         </div>
 
         <div className="py-20 w-full mt-1 m-auto">
           <ul className="list-none w-full">
             {filteredTournaments.map((item, i) => (
-              <li
+              <motion.li
                 key={i}
                 className="bg-primary-200 mb-4 p-4 rounded-lg flex justify-between items-center shadow-md"
+                whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span className="text-lg md:text-xl text-primary-500">
                   {item.title}
                 </span>
-                <button
+                <motion.button
                   className="py-2 px-4 bg-primary-300 text-white rounded-lg hover:bg-primary-400 transition-colors"
+                  whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
                   onClick={() => downloadFileAtURL(item.rules)}
                 >
                   Descargar Reglas
-                </button>
-              </li>
+                </motion.button>
+              </motion.li>
             ))}
           </ul>
         </div>

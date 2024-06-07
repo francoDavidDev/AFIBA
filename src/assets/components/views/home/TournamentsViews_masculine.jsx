@@ -18,20 +18,7 @@ import Sponsors from "../../Sponsors";
 const TournamentsViews_masculine = () => {
   const [filter, setFilter] = useState("masculino");
 
-  const downloadFileAtURL = (url) => {
-    fetch(url)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const blobURL = window.URL.createObjectURL(new Blob([blob]));
-        const fileName = url.split("/").pop();
-        const aTag = document.createElement("a");
-        aTag.href = blobURL;
-        aTag.setAttribute("download", fileName);
-        document.body.appendChild(aTag);
-        aTag.click();
-        aTag.remove();
-      });
-  };
+  
 
   const filteredTournaments = filter === "All" ? TOURNAMENTS : TOURNAMENTS.filter(tournament => tournament.tag === filter);
 
@@ -76,16 +63,7 @@ const TournamentsViews_masculine = () => {
       </h4>
       <div className="w-full h-full p-4 flex flex-col justify-end bg-gradient-to-t from-black to-transparent rounded-b-lg">
         <div className="w-full flex justify-around items-center mt-4">
-          <div
-            className="cursor-pointer hover:text-primary-400 transition-all"
-            onClick={() => {
-              downloadFileAtURL(item.rules);
-            }}
-          >
-            <h5 className="text-md hover:scale-105 transition-transform">
-              REGLAS
-            </h5>
-          </div>
+       
           <div>
             <Link
               to={`/TournamentsViews/${item.id}`}
