@@ -77,7 +77,7 @@ const Members = () => {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
             whileHover={{ scale: 1.05 }}
-            className="w-full h-[450px] rounded-2xl overflow-hidden transition-all duration-300 hover:text-primary-100 hover:shadow-primary-100 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+            className="w-full text-center h-[450px] rounded-2xl overflow-hidden transition-all duration-300 hover:text-primary-100 hover:shadow-primary-100 hover:shadow-md shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
           >
             <motion.div
               className="object-cover w-full h-full py-2 bg-cover bg-top bg-no-repeat flex flex-col justify-end items-center"
@@ -96,7 +96,8 @@ const Members = () => {
                   animate={{ opacity: dropdownOptions[index] ? 1 : 0, x: dropdownOptions[index] ? 0 : 20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {item.icon_options.map((iconItem, i) => (
+                  {/* Comentar icon_options para evitar errores */}
+                  {/* {item.icon_options.map((iconItem, i) => (
                     <motion.div
                       key={i}
                       className="relative cursor-pointer w-10 h-10 hover:scale-110 flex hover:text-primary-100 text-primary-200 justify-center items-center bg-neutral-400 rounded-full"
@@ -104,9 +105,9 @@ const Members = () => {
                     >
                       {iconItem.icon}
                     </motion.div>
-                  ))}
+                  ))} */}
                 </motion.div>
-                <motion.div
+           { /*    <motion.div
                   className="w-10 h-10 text-primary-200 flex justify-center items-center bg-neutral-400 rounded-full"
                   whileHover={{ scale: 1.2 }}
                 >
@@ -115,21 +116,30 @@ const Members = () => {
                       dropdownOptions[index] ? "text-primary-100" : "text-primary-200"
                     } text-2xl`}
                   />
-                </motion.div>
+                </motion.div>*/}
               </div>
-              <motion.h4 className="text-primary-200 h4">{item.name}</motion.h4>
-              <motion.h6
-                className={`${
-                  dropdown === index
-                    ? "text-primary-100 scale-150 shadow-xl"
-                    : "text-primary-200"
-                } h6 transition-all duration-200`}
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                {item.tag}
-              </motion.h6>
+              <motion.h5
+  className={`${
+    dropdown === index
+      ? "text-primary-300 scale-110 shadow-xl font-bold"
+      : "text-primary-200 font-bold"
+  } h5 transition-all duration-200 pb-5 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl `}
+>
+  {item.name}
+</motion.h5>
+<motion.h6
+  className={`${
+    dropdown === index
+      ? "text-primary-400 scale-110 text-lg sm:text-xl md:text-2xl shadow-xl font-bold"
+      : "text-primary-200 text-lg sm:text-xl md:text-2xl"
+  } h6 transition-all duration-200 pb-5 `}
+  initial={{ y: -10, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ delay: 0.3 }}
+>
+  {item.tag}
+</motion.h6>
+
             </motion.div>
           </motion.div>
         ))}

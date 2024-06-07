@@ -86,143 +86,60 @@ export const MEMBERS = [
     ],
   },
   {
-    name: "OSCAR VILLAREAL",
+    name: "LEONARDO ZARATE",
     tag: "VICEPRESIDENTE",
-    image: Oscar_Villarreal_Alta_resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    
-    ],
-  },
-   {
-    name: "SOFIA VILLARREAL",
-    tag: "MIEMBRO",
-    image: Sofia_Villarreal_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "ALEJANDRO MAIDANA",
-    tag: "SECRETARIO",
-    image: Alejandro_Maidana_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-  
-    ],
-  },
-  {
-    name: "ARIEL BURGOS",
-    tag: "TESORERO",
-    image: Ariel_Burgos_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-      { icon: <BsFacebook /> },
-    ],
-  },
-  {
-    name: "CAROLINA VIRTU",
-    tag: "MIEMBRO",
-    image: Carolina_Virtu_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "ERNESTO PASTELNICK",
-    tag: "MIEMBRO",
-    image: Ernesto_Pastelnick_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "EVELYN GARCIA",
-    tag: "MIEMBRO",
-    image: Evelyn_Alta_resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "JOSE LOMBARDO",
-    tag: "MIEMBRO",
-    image: Jose_Lombardo_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "KARINA LOPEZ",
-    tag: "MIEMBRO",
-    image: Karina_Alta_resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "LEO ZARATE",
-    tag: "MIEMBRO",
     image: Leo_Zarate_Alta_Resolucion,
     icon_options: [
       { icon: <BsInstagram /> },
     ],
   },
   {
-    name: "MARCOS TOBIO",
-    tag: "MIEMBRO",
-    image: Marcos_Tobio_Alta_resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "NOELIA MARTINEZ",
-    tag: "MIEMBRO",
-    image: Noelia_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
     name: "PABLO ROLDAN",
-    tag: "MIEMBRO",
+    tag: "SECRETARIO",
     image: Pablo_Roldan_Alta_Resolucion,
     icon_options: [
       { icon: <BsInstagram /> },
     ],
   },
   {
-    name: "PAOLA RIVERA",
-    tag: "MIEMBRO",
-    image: Paola_Alta_Resolucion,
-    icon_options: [
-      { icon: <BsInstagram /> },
-    ],
-  },
-  {
-    name: "RUBEN CASTILLO",
-    tag: "MIEMBRO",
-    image: Ruben_Alta_Resolucion,
+    name: "ALEJANDRO MAIDANA",
+    tag: "TESORERO",
+    image: Alejandro_Maidana_Alta_Resolucion,
     icon_options: [
       { icon: <BsInstagram /> },
     ],
   },
   {
     name: "SEBASTIAN BARRIENTOS",
-    tag: "MIEMBRO",
+    tag: "VOCAL 1",
     image: Sebastian_Barrientos_Alta_Resolucion,
     icon_options: [
       { icon: <BsInstagram /> },
     ],
   },
   {
-    name: "SILVIA SERVIN",
-    tag: "MIEMBRO",
-    image: Silvia_Servin_Alta_Resolucion,
+    name: "NOELIA PEREZ",
+    tag: "VOCAL SUPLENTE",
+    image: Noelia_Alta_Resolucion,
     icon_options: [
       { icon: <BsInstagram /> },
     ],
   },
- 
+  {
+    name: "RUBEN TOUSIDO",
+    tag: "REVISOR DE CUENTA",
+    image: Ruben_Alta_Resolucion,
+    icon_options: [
+      { icon: <BsInstagram /> },
+    ],
+  },
+  {
+    name: "CAROLINA VIRTU",
+    tag: "REVISOR DE CUENTA SUPLENTE",
+    image: Carolina_Virtu_Alta_Resolucion,
+    icon_options: [
+      { icon: <BsInstagram /> },
+    ],
+  },
 ];
+
