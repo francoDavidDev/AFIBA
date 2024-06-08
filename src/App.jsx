@@ -9,7 +9,6 @@ import Rules from "./assets/pages/rules";
 const Header = lazy(() => import('./assets/components/header/Header'));
 const Home = lazy(() => import("./assets/pages/home"));
 const NoticesViews = lazy(() => import("./assets/components/views/home/NoticesViews"));
-const EventsViews = lazy(() => import("./assets/components/views/home/EventsViews"));
 const Footer = lazy(() => import('./assets/components/footer/Footer'));
 const MundialViews = lazy(() => import("./assets/components/views/home/MundialViews"));
 const Store = lazy(() => import("./assets/pages/store"));
@@ -49,7 +48,6 @@ const AnimatedRoutes = () => {
         <Route path="/Store/SingleProduct/:id" element={<PageWrapper component={<SingleProduct />} />} />
         <Route path="/Tournaments" element={<PageWrapper component={<Tournaments />} />} />
         <Route path="/NoticesViews/:id" element={<PageWrapper component={<NoticesViews />} />} />
-        <Route path="/EventsViews/:id" element={<PageWrapper component={<EventsViews />} />} />
         <Route path="/MundialViews/:id" element={<PageWrapper component={<MundialViews />} />} />
         <Route path="/TournamentsViews/:id" element={<PageWrapper component={<TournamentsViews />} />} />
         <Route path="/TournamentsViews_masculine" element={<PageWrapper component={<TournamentsViews_masculine />} />} />
