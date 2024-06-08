@@ -10,13 +10,14 @@ import { Link } from 'react-router-dom';
 
 const Calendar = () => {
   const TOURNAMENTS_2024 = [
-    { name: "Copa independencia", date: "2024-07-07", location: "San Andres de Giles Bs.As", hour: '14:00 hs', info: '+54 92325 47-9243', image: image1, status: 'presente', registration: '#', inscriptions: true },
+    { name: "Sanson Cup", date: "2024-02-24", location: "Palacio de deportes Mar del Plata", info: '2266440219', hour: '10:00 hs', image: image5, status: 'terminado', registration: '#', inscriptions: false },
     { name: "Campeonato Apertura", date: "2024-05-12", location: "Colon 600 - MERLO", info: '2204081490', hour: '14:00 hs', image: image2, status: 'terminado', registration: '#', inscriptions: false },
-    { name: "Campeonato Bonaerense", date: "2024-10-13", location: "La Plata Bs.As", info: '+54 92281 58-9117', hour: '09:00 hs', image: image3, status: 'presente', registration: '#', inscriptions: false },
+    { name: "Copa independencia", date: "2024-07-07", location: "San Andres de Giles Bs.As", hour: '14:00 hs', info: '+54 92325 47-9243', image: image1, status: 'presente', registration: '#', inscriptions: true },
     { name: "Copa Provincia", date: "2024-07-21", location: "Arieta 2917 - San Justo - Bs.As", info: '1127796576 o 1125193782', hour: '11:00 hs', image: image4, status: 'presente', registration: '#', inscriptions: false },
-    { name: "Sanson Cup", date: "2024-02-24", location: "Palacio de deportes Mar del Plata", info: '2266440219', hour: '10:00 hs', image: image5, status: 'terminado', registration: '#', inscriptions: false }
+    { name: "Campeonato Bonaerense", date: "2024-10-13", location: "La Plata Bs.As", info: '+54 92281 58-9117', hour: '09:00 hs', image: image3, status: 'presente', registration: '#', inscriptions: false }
   ];
-  const [filter, setFilter] = useState('todos');
+  
+  const [filter, setFilter] = useState('presente');
   const [selectedTournament, setSelectedTournament] = useState(null);
   const [showImage, setShowImage] = useState(false);
 
@@ -63,60 +64,60 @@ const Calendar = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {filteredTournaments.map((tournament, index) => (
-          <motion.div
-            key={index}
-            className={`rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 ${tournament.status === 'terminado' ? 'opacity-50 cursor-not-allowed' : ''}`}
-            whileTap={{ scale: 0.95 }}
-          >
-            <motion.div className="relative">
-              <motion.img
-                src={tournament.image}
-                alt={tournament.name}
-                className="w-full h-64 object-cover"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              />
-              {tournament.inscriptions && (
-                <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  Inscripciones Abiertas
-                </div>
-              )}
-              {!tournament.inscriptions && tournament.status !== 'terminado' && (
-                <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  No Disponible
-                </div>
-              )}
-              {tournament.status === 'terminado' && (
-                <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  No Disponible
-                </div>
-              )}
-            </motion.div>
-            <motion.div
-              className="p-6 bg-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h2 className="text-2xl text-primary-100 font-bold mb-3">{tournament.name}</h2>
-              <p className="text-gray-700 mb-2"><span className="font-semibold">Fecha:</span> {tournament.date}</p>
-              <p className="text-gray-700 mb-2"><span className="font-semibold">Ubicación:</span> {tournament.location}</p>
-              <p className="text-gray-700 mb-2"><span className="font-semibold">Hora:</span> {tournament.hour}</p>
-              <p className="text-gray-700 mb-4"><span className="font-semibold">Contacto:</span> {tournament.info}</p>
-              <div className="flex justify-end">
-                <button
-                  className={`bg-blue-500 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 ${tournament.status === 'terminado' || !tournament.inscriptions ? 'cursor-not-allowed' : 'hover:bg-blue-600'}`}
-                  onClick={() => tournament.status !== 'terminado' && tournament.inscriptions && handleCardClick(tournament)}
-                  disabled={tournament.status === 'terminado' || !tournament.inscriptions}
-                >
-                  Ver Detalles
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        ))}
+      {filteredTournaments.map((tournament, index) => (
+  <motion.div
+    key={index}
+    className={`rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 ${tournament.status === 'terminado' ? 'opacity-50 cursor-not-allowed' : ''}`}
+    whileTap={{ scale: 0.95 }}
+  >
+    <motion.div className="relative">
+      <motion.img
+        src={tournament.image}
+        alt={tournament.name}
+        className="w-full h-64 object-cover"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      />
+      {tournament.inscriptions && (
+        <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+          Inscripciones Abiertas
+        </div>
+      )}
+      {!tournament.inscriptions && tournament.status !== 'terminado' && (
+        <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+          No Disponible
+        </div>
+      )}
+      {tournament.status === 'terminado' && (
+        <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+          No Disponible
+        </div>
+      )}
+    </motion.div>
+    <motion.div
+      className="p-6 bg-white"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+    >
+      <h2 className="text-2xl text-primary-100 font-bold mb-3">{tournament.name}</h2>
+      <p className="text-gray-700 mb-2"><span className="font-semibold">Fecha:</span> {tournament.date}</p>
+      <p className="text-gray-700 mb-2"><span className="font-semibold">Ubicación:</span> {tournament.location}</p>
+      <p className="text-gray-700 mb-2"><span className="font-semibold">Hora:</span> {tournament.hour}</p>
+      <p className="text-gray-700 mb-4"><span className="font-semibold">Contacto:</span> {tournament.info}</p>
+      <div className="flex justify-end">
+        <button
+          className={`bg-blue-500 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 ${tournament.status === 'terminado' || !tournament.inscriptions ? 'cursor-not-allowed' : 'hover:bg-blue-600'}`}
+          onClick={() => tournament.status !== 'terminado' && tournament.inscriptions && handleCardClick(tournament)}
+          disabled={tournament.status === 'terminado' || !tournament.inscriptions}
+        >
+          Ver Detalles
+        </button>
+      </div>
+    </motion.div>
+  </motion.div>
+))}
       </div>
 
       {selectedTournament && showImage && (

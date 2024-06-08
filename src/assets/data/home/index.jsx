@@ -21,49 +21,34 @@ export const CARROUSEL = [
   },
 ];
 
-import image1 from "../../imgs/home/notices/7_julio.jpg";
-import image2 from "../../imgs/home/notices/24 _febrero.jpg";
-import image3 from "../../imgs/home/notices/13_octubre.jpg";
-import image4 from "../../imgs/home/notices/21_julio.jpg";
+
+
+
+
+import ASAMBLEA_AFIBA_MARZO_2024 from '../../imgs/notice/ASAMBLEA_AFIBA_MARZO_2024.jpg';
+import ASAMBLEA_AFIBA_MARZO_2_2024 from '../../imgs/notice/ASAMBLEA_AFIBA_MARZO_2_2024.jpg';
+import julio_7 from '../../imgs/notice/7_julio.jpg';
 import calendario from "../../imgs/home/notices/calendario.jpg";
 
 export const NOTICES = [
-  {
-    id: "2",
-    title: "CALENDARIO",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: calendario,
-  },
+ 
   {
     id: "1",
-    title: "Copa Independencia",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: image1,
+    title: "ASAMBLEA AFIBA MARZO 2024",
+    description: "El Ultimo 16 Marzo De 2024 Afiba Famf Ifbb Renovó Su Comision Directiva Para El Nuevo Ciclo 2024 / 2028.Presidenta: Maria Mernes Vicepresidente: Leonardo Zarate Secretario: Pablo Roldan Tesorero: Alejandro Maidana.",
+    image: ASAMBLEA_AFIBA_MARZO_2024,
+  },
+  {
+    id: "2",
+    title: "ASAMBLEA AFIBA MARZO 2 2024",
+    description: "El Ultimo 16 Marzo De 2024 Afiba Famf Ifbb Renovó Su Comision Directiva Para El Nuevo Ciclo 2024 / 2028.",
+    image: ASAMBLEA_AFIBA_MARZO_2_2024,
   },
   {
     id: "3",
-    title: "Se anuncia el calendario de partidos para la selecccion",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: image2,
-  },
-  {
-    id: "4",
-    title:
-      "River plate puede asegurar el billete al Mundial de Clubel para ser asesinos",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: image3,
-  },
-  {
-    id: "5",
-    title:
-      "River plate puede asegurar el billete al Mundial de Clubel para ser asesinos",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: image4,
+    title: "COPA INDEPENDENCIA 7 DE JULIO 2024",
+    description: "La Copa Independencia 2024 es uno de los eventos más destacados del calendario de fisicoculturismo en Argentina, organizada por AFIBA. Este prestigioso torneo se llevará a cabo el 7 de julio de 2024 en Buenos Aires, una ciudad conocida por su vibrante cultura y pasión por el deporte.",
+    image: julio_7,
   },
 ];
 
@@ -103,13 +88,7 @@ export const CARROUSEL_THEMES = [
   { title: "Desarrollo", image: imageTheme4 },
 ];
 
-export const EVENTS=[
-    { id:'1',title: "Torneo Femenino", image: image1 ,description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-    {id:'2', title: "Torneo Masculino", image: image2,description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    {id:'3', title: "Torneo de Verano", image: image3,description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    {id:'4', title: "Torneo Mundial", image: image4,description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    {id:'5', title: "Torneo Mendoza", image: imageTheme6,description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-]
+
 
 import imageMundial1 from '../../imgs/home/mundial/image1.png'
 import imageMundial2 from '../../imgs/home/mundial/image2.png'

@@ -71,17 +71,7 @@ const NoticesViews = () => {
             <div className="w-full lg:w-1/2">
               <h2 className="text-2xl font-bold mb-4">{title}</h2>
               <p className="text-neutral-100">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                sit amet nibh eu magna facilisis venenatis. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Mauris sit amet nibh eu
-                magna facilisis venenatis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Mauris sit amet nibh eu magna
-                facilisis venenatis. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Mauris sit amet nibh eu magna facilisis
-                venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Mauris sit amet nibh eu magna facilisis venenatis. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit
-                amet nibh eu magna facilisis venenatis.
+               {description}
               </p>
             </div>
           </div>
