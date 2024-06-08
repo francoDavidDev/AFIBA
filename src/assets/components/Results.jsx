@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
-import { RESULTS } from '../data/results';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { RESULTS } from "../data/results";
+import { motion } from "framer-motion";
 
 const Results = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedYear, setSelectedYear] = useState('All');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedYear, setSelectedYear] = useState("All");
 
   const handleDownload = (pdfUrl) => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = pdfUrl.split('/').pop();
+    link.download = pdfUrl.split("/").pop();
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const filteredResults = RESULTS.filter(item => {
-    const matchesYear = selectedYear === 'All' || item.year === selectedYear;
-    const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredResults = RESULTS.filter((item) => {
+    const matchesYear = selectedYear === "All" || item.year === selectedYear;
+    const matchesSearch = item.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     return matchesYear && matchesSearch;
   });
 
   return (
     <div className="container mx-auto p-6">
+      <div className="w-full m-auto text-center py-10">
+        <h2 className="h2">HISTORIAL DE RESULTADOS</h2>
+      </div>
       <div className="mb-6 flex justify-between items-center">
         <input
           type="text"
@@ -37,8 +42,10 @@ const Results = () => {
           onChange={(e) => setSelectedYear(e.target.value)}
         >
           <option value="All">Todos los años</option>
-          {Array.from(new Set(RESULTS.map(item => item.year))).map(year => (
-            <option key={year} value={year}>{year}</option>
+          {Array.from(new Set(RESULTS.map((item) => item.year))).map((year) => (
+            <option key={year} value={year}>
+              {year}
+            </option>
           ))}
         </select>
       </div>
@@ -54,7 +61,12 @@ const Results = () => {
           >
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${item.image})`, height: '100%', width: '100%', filter: 'brightness(0.6)' }}
+              style={{
+                backgroundImage: `url(${item.image})`,
+                height: "100%",
+                width: "100%",
+                filter: "brightness(0.6)",
+              }}
             ></div>
             <div className="absolute inset-0 flex items-center justify-center p-8 z-10">
               <div className="bg-black bg-opacity-60 rounded-lg p-6 text-white text-center">
