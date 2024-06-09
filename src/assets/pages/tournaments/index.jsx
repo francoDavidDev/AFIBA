@@ -7,7 +7,7 @@ import Slider from "react-slick";
 // Import motion from framer-motion
 import { motion, useCycle } from "framer-motion";
 // Import image
-import image from "../../imgs/tournaments/banner.png";
+import image from "../../imgs/tournaments/banner.jpg";
 import { TOURNAMENTS } from "../../data/tournaments";
 import Sponsors from "../../components/Sponsors";
 
@@ -35,7 +35,7 @@ const Tournaments = () => {
           <h2 className="h2">TORNEOS AFIBA</h2>
         </div>
 
-        <div className="h-[300px] md:h-[600px] w-full bg-cover bg-top bg-no-repeat rounded-xl overflow-hidden"
+        <div className="h-[300px] md:h-[600px] w-full bg-cover bg-bottom bg-no-repeat rounded-xl overflow-hidden"
           style={{ backgroundImage: `url('${image}')` }}>
         </div>
 
