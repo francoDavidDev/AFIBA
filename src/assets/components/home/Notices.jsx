@@ -73,22 +73,20 @@ const Notices = () => {
         <h4 className="h4 p">EVENTO PROXIMO</h4>
         {NOTICES.map((item, i) => {
           if (item.id === "3") {
-            const itemUrl = `/NoticesViews/${item.id}`;
+            const itemUrl = `#/NoticesViews/${item.id}`;
             return (
-           
-                <div key={i}>
-                     <Link to={itemUrl}  className="block">
-                <div className="overflow-hidden rounded-xl">
-                  <motion.div
-                    onMouseEnter={() => anime()}
-                    onMouseLeave={() => anime()}
-                    className="w-full bg-green-500 h-[430px] bg-cover bg-no-repeat overflow-hidden bg-top rounded-xl cursor-pointer hover:scale-105 transition-all"
-                    style={{ backgroundImage: `url('${item.image}')` }}
-                  >
-                    {/* Opcional: agregar elementos animados si es necesario */}
-                  </motion.div>
-                </div>
-            
+              <div key={i}>
+                <Link to={`/NoticesViews/${item.id}`} className="block">
+                  <div className="overflow-hidden rounded-xl">
+                    <motion.div
+                      onMouseEnter={() => anime()}
+                      onMouseLeave={() => anime()}
+                      className="w-full bg-green-500 h-[430px] bg-cover bg-no-repeat overflow-hidden bg-top rounded-xl cursor-pointer hover:scale-105 transition-all"
+                      style={{ backgroundImage: `url('${item.image}')` }}
+                    >
+                      {/* Opcional: agregar elementos animados si es necesario */}
+                    </motion.div>
+                  </div>
                 </Link>
                 <div className="flex flex-col gap-y-5 mt-3">
                   <div className="flex justify-between">
@@ -103,8 +101,7 @@ const Notices = () => {
                   </div>
                   <p>{item.description}</p>
                 </div>
-                </div>
-            
+              </div>
             );
           } else {
             return null;
@@ -117,10 +114,10 @@ const Notices = () => {
         <div className="w-full flex gap-0 lg:gap-4 gap-y-4 justify-around lg:justify-center items-center flex-wrap">
           {NOTICES.map((item, i) => {
             if (item.id !== "3") {
-              const itemUrl = `/NoticesViews/${item.id}`;
+              const itemUrl = `#/NoticesViews/${item.id}`;
               return (
                 <div key={i} className="relative w-full md:w-[45%] sm:w-full h-[200px] md:h-[400px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:scale-105 duration-200 hover:rounded-xl bg-bottom bg-cover bg-no-repeat" style={{ backgroundImage: `url('${item.image}')` }}>
-                  <Link to={itemUrl} className="h-full w-full bg-black bg-opacity-50 p-4 flex flex-col justify-end">
+                  <Link to={`/NoticesViews/${item.id}`} className="h-full w-full bg-black bg-opacity-50 p-4 flex flex-col justify-end">
                     <p className="text-white transition-colors duration-300 hover:text-[#0f457]">{item.description}</p>
                   </Link>
                   <IoShareSocial
