@@ -143,7 +143,7 @@ const Calendar = () => {
       <p className="text-gray-300 mb-1"><span className="font-bold text-white">Contacto:</span> {selectedTournament.info}</p>
       <p className="text-gray-300 mb-1"><span className="font-bold text-white">Inscripciones:</span> {selectedTournament.inscriptions ? 'Abiertas' : 'No Disponible'}</p>
       <div className="mt-2">
-        <a href={selectedTournament.registration} className={selectedTournament.inscriptions ? "text-blue-400 hover:underline" : "line-through text-gray-500 pointer-events-none block mb-2"}>{selectedTournament.inscriptions ? 'Inscripción' : 'Inscripción no disponible'}</a>
+        <Link to={`/RegistrationForm`} className={selectedTournament.inscriptions ? "text-blue-400 hover:underline" : "line-through text-gray-500 pointer-events-none block mb-2"}>{selectedTournament.inscriptions ? 'Inscripción' : 'Inscripción no disponible'}</Link>
       </div>
       <div className="mt-2">
         <Link to={`/Tournaments`} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Ver Reglas</Link>

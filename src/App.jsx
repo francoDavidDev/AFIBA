@@ -55,6 +55,7 @@ const AnimatedRoutes = () => {
         <Route path="/TournamentsForm" element={<PageWrapper component={<TournamentsForm />} />} />
         <Route path="/Results" element={<PageWrapper component={<Results />} />} />
         <Route path="/Rules" element={<PageWrapper component={<Rules />} />} />
+        <Route path="/RegistrationForm" element={<PageWrapper component={<RegistrationForm />} />} />
 
       </Routes>
     </AnimatePresence>

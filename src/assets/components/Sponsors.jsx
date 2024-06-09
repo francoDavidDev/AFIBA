@@ -61,10 +61,10 @@ const Sponsors = () => {
             transition={{ type: 'spring', stiffness: 300 }}
           >
             <div
-              className="rounded-xl m-1 overflow-hidden w-full h-[400px] cursor-pointer bg-no-repeat bg-cover bg-center transform transition-transform duration-500 relative"
+              className="rounded-xl m-1  w-full h-[400px] cursor-pointer bg-no-repeat bg-cover bg-center transform transition-transform duration-500 relative"
               style={{ backgroundImage: `url('${item.image}')` }}
             >
-              <div className="absolute inset-0 flex justify-center items-center bg-black/50 rounded-xl">
+              <div className="absolute inset-0 flex justify-center items-center hover:bg-black/50 rounded-xl">
                 <p className="text-white text-lg font-semibold">{item.name}</p>
               </div>
               <div className="absolute bottom-4 left-4 bg-white bg-opacity-70 p-2 rounded-lg">
