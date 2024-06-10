@@ -106,7 +106,9 @@ const RegistrationForm = () => {
       transition={{ duration: 0.5 }}
       className="max-w-lg mx-auto p-8 bg-neutral-100 shadow-md rounded-lg mt-10"
     >
-      <h1 className="text-2xl font-bold mb-6 text-center text-primary-300">COMPLETAR SU FORMULARIO</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center text-primary-300">COMPLETAR SU FORMULARIO 
+      <br/>
+      <span className="text-primary-400 "> (EN MAYUSCULA) </span> </h1>
       <form ref={formRef} onSubmit={handleSubmit}>
         <InputField label="NOMBRE Y APELLIDO *" type="text" name="nombre" value={form.nombre} onChange={handleChange} />
         <InputField label="FECHA DE NACIMIENTO *" type="date" name="fecha_nacimiento" value={form.fecha_nacimiento} onChange={handleChange} />
