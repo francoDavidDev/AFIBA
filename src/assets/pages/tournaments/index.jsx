@@ -32,7 +32,7 @@ const Tournaments = () => {
     <section className="w-full flex flex-col justify-center h-auto items-center m-auto gap-y-10">
       <div className="w-[90%] h-auto py-20 flex flex-col justify-center items-center gap-y-7">
         <div className="w-full m-auto text-center">
-          <h2 className="h2">TORNEOS AFIBA</h2>
+          <h2 className="h2">INFORMACION DE MODALIDADES</h2>
         </div>
 
         <div className="h-[300px] md:h-[600px] w-full bg-cover bg-bottom bg-no-repeat rounded-xl overflow-hidden"
@@ -69,7 +69,7 @@ const Tournaments = () => {
             className={`py-2 px-4 rounded-lg ${filter === "mixed" ? "bg-[#114232] text-white" : "bg-gray-200 text-black"}`}
             onClick={() => setFilter("mixed")}
           >
-            Mixto
+            Parejas
           </button>
         </div>
 
