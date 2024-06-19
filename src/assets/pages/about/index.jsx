@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../imgs/about/staff/banner.png";
+import banner from "../../imgs/about/banner.jpg";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import Info from "../../components/about/Info";

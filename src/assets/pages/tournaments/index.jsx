@@ -51,7 +51,7 @@ const Tournaments = () => {
     <section className="w-full flex flex-col justify-center h-auto items-center m-auto gap-y-10">
       <div className="w-[90%] h-auto py-20 flex flex-col justify-center items-center gap-y-7">
         <div className="w-full m-auto text-center">
-          <h2 className="h2">TORNEOS DE AFIBA</h2>
+          <h2 className="h2">GALERIA DE TORNEOS AFIBA</h2>
         </div>
 
         <div className="py-20 w-full mt-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-5 m-auto">

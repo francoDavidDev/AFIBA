@@ -1,20 +1,24 @@
 export const NAV = [
-    { name: "INICIO", href: "/" },
-    { name: "NOSOTROS", href: "/about" },
-    { name: "CALENDARIO", href: "/Calendar" },
-    { name: "RESULTADOS", href: "/Results" },
-    { name: "MODALIDADES", href: "/modalidades" },
-    { name: "TORNEOS", href: "/torneos" },
-
-    { name: "REGLAMENTOS", href: "/Rules" },
+  { name: "INICIO", href: "/" },
+  { name: "NOSOTROS", href: "/about" },
+  { name: "CALENDARIO", href: "/Calendar" },
 
 
-    {
-      /*   { name: "Reglamentos", href: "contact" },
-    { name: "Resultados", href: "contact" },
-  { name: "Contacto", href: "contact" },*/
-    },
-  ];
+
+ 
+  {
+    name: "TORNEOS",
+ 
+    subMenu: [
+      { name: "GALERIA", href: "/torneos" },
+      { name: "MODALIDADES", href: "/modalidades" },
+      { name: "REGLAMENTOS", href: "/Rules" },
+      { name: "RESULTADOS", href: "/Results" },
+
+    ],
+  },
+];
+
 
   import { FaFacebook,FaInstagram,FaWhatsapp,FaCameraRetro } from "react-icons/fa";
   
