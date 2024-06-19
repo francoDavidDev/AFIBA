@@ -3,6 +3,21 @@ export const NAV = [
   { name: "NOSOTROS", href: "/about" },
   { name: "CALENDARIO", href: "/Calendar" },
 
+  { name: "RESULTADOS", href: "/Results" },
+  { name: "MODALIDADES", href: "/modalidades" },
+  { name: "GALERIA", href: "/torneos" },
+  { name: "REGLAMENTOS", href: "/Rules" },
+ 
+];
+;
+
+
+
+export const NAV_LARGE = [
+  { name: "INICIO", href: "/" },
+  { name: "NOSOTROS", href: "/about" },
+  { name: "CALENDARIO", href: "/Calendar" },
+
 
 
  

@@ -35,7 +35,7 @@ const NavMobile = ({ navMobile, setNavMobile }) => {
           return (
             <li
               key={index}
-              className="text-white font-primary font-bold  text-body-md cursor-pointer hover:text-primary-300 duration-200 ease-in-out"
+              className="text-white font-primary font-bold  text-body-md cursor-pointer hover:text-primary-400 duration-200 ease-in-out"
             >
               <Link
                 onClick={() => setNavMobile(!navMobile)}
