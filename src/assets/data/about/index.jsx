@@ -55,7 +55,7 @@ export const STAFF = [
 
 // Definimos un array de objetos que contienen iconos de redes sociales
 import { BsInstagram, BsWhatsapp, BsFacebook, BsYoutube } from "react-icons/bs";
-import Maria_Mernes_Alta_resolucion from '../../imgs/about/members/Maria_Mernes_Alta_resolucion.jpg'
+import Maria_Mernes_Alta_resolucion from '../../imgs/about/members/Maria_Mernes_Alta_resolucion.jpeg'
 import Oscar_Villarreal_Alta_resolucion from '../../imgs/about/members/Oscar_Villarreal_Alta_resolucion.jpg'
 import Alejandro_Maidana_Alta_Resolucion from '../../imgs/about/members/Alejandro_Maidana_Alta_Resolucion.jpg'
 import Ariel_Burgos_Alta_Resolucion from '../../imgs/about/members/Ariel_Burgos_Alta_Resolucion.jpg'

@@ -12,15 +12,28 @@ import premiumFitness from '../../imgs/sponsors/premiumFitness.jpeg'
 import technicalFitness from '../../imgs/sponsors/technicalFitness.jpeg'
 
 export const SPONSORS=[
- {title:'asd',image:americaForce },   
- 
- {title:'asd',image:fox },   
- {title:'asd',image:j2f },   
- {title:'asd',image:jeho },   
- {title:'asd',image:megaMass },   
- {title:'asd',image:muscleTandil },   
-  
- {title:'asd',image:panteraFitness },   
- {title:'asd',image:premiumFitness },   
+    {href:'https://americanforcenew.com.ar/multimedia',image:americaForce },   
+    
+    {href:'https://www.equipamientosfox.com/',image:fox },   
+    {href:'https://www.instagram.com/j2finnovar/',image:j2f },   
+    {href:'https://www.instagram.com/jeho.training/',image:jeho },   
+    {href:'https://www.instagram.com/neodsign.ar/',image:megaMass },   
+    {href:'asd',image:muscleTandil },   
+     
+    {href:'https://www.facebook.com/p/Pantera-Fitness-100076240963770/?_rdr',image:panteraFitness },   
+    {href:'https://www.veesfitness.net/en',image:premiumFitness },   
+   
+   ]
+   
 
+import america_force from  '../../videos/sponsors/america_force.mp4'
+import fox_video from  '../../videos/sponsors/FOX_video_explicativo.mp4'
+import jeho_video from  '../../videos/sponsors/jeho.mp4'
+
+
+
+export const SPONSORS_VIDEOS =[
+    {title:'America Force', videoUrl:america_force},
+    {title:'Fox', videoUrl:fox_video},
+    {title:'Jeho', videoUrl:jeho_video},
 ]

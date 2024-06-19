@@ -1,107 +1,149 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-// Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-// Import motion from framer-motion
-import { motion, useCycle } from "framer-motion";
-// Import image
-import image from "../../imgs/tournaments/banner.jpg";
-import { TOURNAMENTS } from "../../data/tournaments";
-import Sponsors from "../../components/Sponsors";
+import React, { useState } from 'react';
+import { TOURNAMENTS_2024_IMAGES } from '../../data/tournaments/index.jsx'; // Ajusta la ruta según tu estructura de proyecto
+import { FaEye } from 'react-icons/fa'; // Importa el ícono de react-icons
+import { motion } from 'framer-motion'; // Importa motion de framer-motion
 
 const Tournaments = () => {
-  const [filter, setFilter] = useState("All");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentImages, setCurrentImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredTournaments = TOURNAMENTS.filter(tournament => {
-    const matchesFilter = filter === "All" || tournament.tag === filter;
-    const matchesSearchTerm = tournament.title.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesFilter && matchesSearchTerm;
-  });
+  const openModal = (images) => {
+    setCurrentImages(images);
+    setModalIsOpen(true);
+  };
 
-  const btn_animation = {
-    initial: { scale: 0 },
-    animate: {
-      scale: 1,
-    },
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setCurrentImages([]);
+    setSelectedImage(null);
+  };
+
+  const openImageDetail = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeImageDetail = () => {
+    setSelectedImage(null);
+  };
+
+  // Animaciones para el modal
+  const modalVariants = {
+    hidden: { opacity: 0, y: '-100vh' },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, y: '100vh', transition: { duration: 0.5 } }
+  };
+
+  // Animaciones para las tarjetas
+  const cardVariants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+    hover: { scale: 1.05, transition: { duration: 0.3 } }
+  };
+
+  // Animaciones para las imágenes dentro del modal
+  const imageVariants = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1, transition: { duration: 0.3 } }
   };
 
   return (
     <section className="w-full flex flex-col justify-center h-auto items-center m-auto gap-y-10">
       <div className="w-[90%] h-auto py-20 flex flex-col justify-center items-center gap-y-7">
         <div className="w-full m-auto text-center">
-          <h2 className="h2">INFORMACION DE MODALIDADES</h2>
-        </div>
-
-        <div className="h-[300px] md:h-[600px] w-full bg-cover bg-bottom bg-no-repeat rounded-xl overflow-hidden"
-          style={{ backgroundImage: `url('${image}')` }}>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-10">
-          <input
-            type="text"
-            placeholder="Buscar por nombre..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            className={`py-2 px-4 rounded-lg ${filter === "All" ? "bg-[#114232] text-white" : "bg-gray-200 text-black"}`}
-            onClick={() => setFilter("All")}
-          >
-            Todos
-          </button>
-          <button
-            className={`py-2 px-4 rounded-lg ${filter === "femenino" ? "bg-[#114232] text-white" : "bg-gray-200 text-black"}`}
-            onClick={() => setFilter("femenino")}
-          >
-            Femenino
-          </button>
-          <button
-            className={`py-2 px-4 rounded-lg ${filter === "masculino" ? "bg-[#114232] text-white" : "bg-gray-200 text-black"}`}
-            onClick={() => setFilter("masculino")}
-          >
-            Masculino
-          </button>
-          <button
-            className={`py-2 px-4 rounded-lg ${filter === "mixed" ? "bg-[#114232] text-white" : "bg-gray-200 text-black"}`}
-            onClick={() => setFilter("mixed")}
-          >
-            Parejas
-          </button>
+          <h2 className="h2">TORNEOS DE AFIBA</h2>
         </div>
 
         <div className="py-20 w-full mt-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-5 m-auto">
-          {filteredTournaments.map((item, i) => (
-            <div
-              key={i}
-              className="bg-black w-full h-[300px] md:h-[400px] rounded-lg flex flex-col justify-center bg-center bg-cover bg-no-repeat shadow-md transition-shadow duration-300 hover:shadow-xl"
-              style={{ backgroundImage: `url('${item.image}')` }}
+          {TOURNAMENTS_2024_IMAGES.map((tournament) => (
+            <motion.div
+              key={tournament.id}
+              className="relative bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer"
+              onClick={() => openModal(tournament.images)}
+              variants={cardVariants}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
             >
-              <h4 className="text-lg md:text-xl text-[#EEF7FF] text-center py-4 bg-gradient-to-b from-black to-transparent rounded-t-lg">
-                {item.title}
-              </h4>
-              <div className="w-full h-full p-4 flex flex-col justify-end bg-gradient-to-t from-black to-transparent rounded-b-lg">
-                <div className="w-full flex justify-center items-center mt-4">
-                  <div>
-                    <Link
-                      to={`/TournamentsViews/${item.id}`}
-                      className="text-md text-[#EEF7FF] hover:text-[#f70808] transition-all cursor-pointer hover:scale-105"
-                    >
-                      VER MÁS
-                    </Link>
-                  </div>
-                </div>
+              <img src={tournament.src} alt={tournament.title} className="w-full h-96 object-cover" />
+              <div className="p-4 bg-gray-100">
+                <h3 className="text-lg font-semibold text-center text-primary-100">{tournament.title}</h3>
               </div>
-            </div>
+              <div className="absolute top-2 right-2 flex items-center justify-center bg-primary-400 p-2 rounded-full shadow-lg">
+                <FaEye className="text-xl text-gray-700 cursor-pointer" />
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Sponsors */}
-      <Sponsors />
+      {modalIsOpen && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={modalVariants}
+        >
+          <motion.div className="bg-white rounded-lg shadow-lg p-6 max-w-4xl w-full"
+            variants={modalVariants}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full"
+            >
+              &times;
+            </button>
+            <div className="h-[80vh] overflow-y-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {currentImages.map((image, index) => (
+                  <motion.div
+                    key={index}
+                    className="cursor-pointer"
+                    onClick={() => openImageDetail(image)}
+                    variants={imageVariants}
+                    initial="initial"
+                    animate="animate"
+                  >
+                    <img src={image} alt={`Tournament Image ${index}`} className="w-full h-auto object-cover rounded-lg" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+
+      {selectedImage && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={modalVariants}
+        >
+          <motion.div className="bg-white rounded-lg shadow-lg p-6 max-w-4xl w-full"
+            variants={modalVariants}
+          >
+            <button
+              onClick={closeImageDetail}
+              className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full"
+            >
+              &times;
+            </button>
+            <div className="flex flex-col items-center">
+              <motion.img
+                src={selectedImage}
+                alt="Selected Image"
+                className="max-w-full max-h-[80vh] object-contain rounded-lg"
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 };

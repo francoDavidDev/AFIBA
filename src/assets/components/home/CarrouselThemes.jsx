@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {  CARROUSEL_THEMES, NOTICES } from "../../data/home";
 import { Link } from "react-router-dom";
-import { TOURNAMENTS } from "../../data/tournaments";
+import { MODALITIES } from "../../data/modalities";
 
 const CarrouselThemes = () => {
   var settings = {
@@ -57,7 +57,7 @@ const CarrouselThemes = () => {
       </div>
       <div>
         <Slider {...settings} className="slick-slide_themes">
-          {TOURNAMENTS.map((item, i) => (
+          {MODALITIES.map((item, i) => (
             <Link
             to={`/TournamentsViews/${item.id}`}
             key={i} > 

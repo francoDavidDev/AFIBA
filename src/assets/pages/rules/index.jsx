@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { TOURNAMENTS } from "../../data/tournaments";
+import { MODALITIES } from "../../data/modalities";
 import { motion } from "framer-motion";
 
 const Rules = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(" ");
 
   const downloadFileAtURL = (url) => {
     fetch(url)
@@ -20,7 +20,7 @@ const Rules = () => {
       });
   };
 
-  const filteredTournaments = TOURNAMENTS.filter(tournament => 
+  const filteredTournaments = MODALITIES.filter(tournament => 
     tournament.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
