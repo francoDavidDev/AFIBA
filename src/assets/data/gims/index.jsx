@@ -12,6 +12,6 @@ export const GIMS=[
     {image:laRocaGym,href:'https://www.instagram.com/larocafitnesscom/'},
     {image:palasGym,href:'https://www.instagram.com/palasgym/?hl=es-la'},
     {image:powebGym,href:'https://www.instagram.com/powergymdeportes/'},
-    {image:sportCenter,href:'https://fitness-sport-oficial.vercel.app/'},
+    {image:sportCenter,href:'https://www.instagram.com/fitness_sportcenter23/'},
     {image:zonaRP,href:'https://www.instagram.com/zona_ryp/?hl=es'},
 ]
