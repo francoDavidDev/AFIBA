@@ -8,10 +8,10 @@ import zonaRP from '../../imgs/gimns/zonaRP.jpeg'
 
 
 export const GIMS=[
-    {image:evolutionGym},
-    {image:laRocaGym},
-    {image:palasGym},
-    {image:powebGym},
-    {image:sportCenter},
-    {image:zonaRP},
+    {image:evolutionGym,href:'https://www.instagram.com/evolutionfitnesscenterok/'},
+    {image:laRocaGym,href:'https://www.instagram.com/larocafitnesscom/'},
+    {image:palasGym,href:'https://www.instagram.com/palasgym/?hl=es-la'},
+    {image:powebGym,href:'https://www.instagram.com/powergymdeportes/'},
+    {image:sportCenter,href:'https://fitness-sport-oficial.vercel.app/'},
+    {image:zonaRP,href:'https://www.instagram.com/zona_ryp/?hl=es'},
 ]

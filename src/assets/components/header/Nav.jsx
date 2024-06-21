@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { NAV } from "../../data/header/index";
+import { NAV_LARGE } from "../../data/header/index";
 
 const Nav = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -16,7 +16,7 @@ const Nav = () => {
   return (
     <nav className="hidden sm:flex">
       <ul className="flex text-primary-200 font-semibold gap-x-6">
-        {NAV.map((item, index) => (
+        {NAV_LARGE.map((item, index) => (
           <li
             key={index}
             className="relative group text-sm cursor-pointer transition-all duration-100 "
