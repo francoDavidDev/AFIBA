@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
+import imagen from '../../imgs/gimns/evolutionGym.jpeg'
 
 const provinces = [
   "Buenos Aires",
@@ -77,14 +78,17 @@ const TournamentsForm = () => {
     height: "",
     phone: "",
     trainer: "",
-    photo:'',
+    photo: '',
   });
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [photoCarnet, setPhotoCarnet] = useState(null);
+  const fileInputRef = useRef(); // Referencia para el input de archivo
   const formRef = useRef();
-  const fileInputRef = useRef(); // Agregamos ref para el input de archivo
+
+
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -160,10 +164,13 @@ const TournamentsForm = () => {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e,canvas) => {
     e.preventDefault();
     setLoading(true);
+    var base64 = canvas.toDataURL();
 
+
+    console.log('imagen: ', form.photo);
     if (validateForm()) {
       emailjs
         .send(
@@ -182,8 +189,8 @@ const TournamentsForm = () => {
             to_height: form.height,
             to_phone: form.phone,
             to_trainer: form.trainer,
-            to_photo:form.photo,
-     
+            content: base64,
+
             message: "Formulario de Inscripción",
           },
           "7-MGEkvWiUORZGWZE"
@@ -223,10 +230,13 @@ const TournamentsForm = () => {
           <h3 className="h3 text-primary-100 text-2xl font-semibold mb-6 text-center">
             INSCRIPCIÓN TORNEO DE INDEPENDENCIA
           </h3>
-          <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
+          <form className="space-y-6" ref={formRef} onSubmit={handleSubmit} enctype="multipart/form-data" method="post">
             {/* email - correo */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="email">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="email"
+              >
                 Correo Electrónico:
               </label>
               <input
@@ -235,14 +245,19 @@ const TournamentsForm = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.email ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
               {errors.email && <p className="text-red-600">{errors.email}</p>}
             </div>
 
             {/* name - nombre y apellido */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="fullName">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="fullName"
+              >
                 Nombre y Apellido:
               </label>
               <input
@@ -251,14 +266,21 @@ const TournamentsForm = () => {
                 name="fullName"
                 value={form.fullName}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.fullName ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.fullName ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
-              {errors.fullName && <p className="text-red-600">{errors.fullName}</p>}
+              {errors.fullName && (
+                <p className="text-red-600">{errors.fullName}</p>
+              )}
             </div>
 
             {/* fecha de nacimiento - date day */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="birthDate">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="birthDate"
+              >
                 Fecha de Nacimiento:
               </label>
               <input
@@ -267,9 +289,13 @@ const TournamentsForm = () => {
                 name="birthDate"
                 value={form.birthDate}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.birthDate ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.birthDate ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
-              {errors.birthDate && <p className="text-red-600">{errors.birthDate}</p>}
+              {errors.birthDate && (
+                <p className="text-red-600">{errors.birthDate}</p>
+              )}
             </div>
 
             {/* dni */}
@@ -283,14 +309,19 @@ const TournamentsForm = () => {
                 name="dni"
                 value={form.dni}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.dni ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.dni ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
               {errors.dni && <p className="text-red-600">{errors.dni}</p>}
             </div>
 
             {/* provincia */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="province">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="province"
+              >
                 Provincia:
               </label>
               <select
@@ -298,7 +329,9 @@ const TournamentsForm = () => {
                 name="province"
                 value={form.province}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.province ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.province ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               >
                 <option value="">Seleccionar Provincia</option>
                 {provinces.map((province) => (
@@ -307,12 +340,17 @@ const TournamentsForm = () => {
                   </option>
                 ))}
               </select>
-              {errors.province && <p className="text-red-600">{errors.province}</p>}
+              {errors.province && (
+                <p className="text-red-600">{errors.province}</p>
+              )}
             </div>
 
             {/* modalidad */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="modality">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="modality"
+              >
                 Modalidad:
               </label>
               <select
@@ -320,7 +358,9 @@ const TournamentsForm = () => {
                 name="modality"
                 value={form.modality}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.modality ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.modality ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               >
                 <option value="">Seleccionar Modalidad</option>
                 {modalities.map((modality) => (
@@ -329,12 +369,17 @@ const TournamentsForm = () => {
                   </option>
                 ))}
               </select>
-              {errors.modality && <p className="text-red-600">{errors.modality}</p>}
+              {errors.modality && (
+                <p className="text-red-600">{errors.modality}</p>
+              )}
             </div>
 
             {/* categoria */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="category">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="category"
+              >
                 Categoría:
               </label>
               <select
@@ -342,7 +387,9 @@ const TournamentsForm = () => {
                 name="category"
                 value={form.category}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.category ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.category ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               >
                 <option value="">Seleccionar Categoría</option>
                 {categories.map((category) => (
@@ -351,12 +398,17 @@ const TournamentsForm = () => {
                   </option>
                 ))}
               </select>
-              {errors.category && <p className="text-red-600">{errors.category}</p>}
+              {errors.category && (
+                <p className="text-red-600">{errors.category}</p>
+              )}
             </div>
 
             {/* peso de competencia */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="competitionWeight">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="competitionWeight"
+              >
                 Peso de Competencia:
               </label>
               <input
@@ -365,14 +417,23 @@ const TournamentsForm = () => {
                 name="competitionWeight"
                 value={form.competitionWeight}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.competitionWeight ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.competitionWeight
+                    ? "border-red-500"
+                    : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
-              {errors.competitionWeight && <p className="text-red-600">{errors.competitionWeight}</p>}
+              {errors.competitionWeight && (
+                <p className="text-red-600">{errors.competitionWeight}</p>
+              )}
             </div>
 
             {/* altura */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="height">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="height"
+              >
                 Altura:
               </label>
               <input
@@ -381,14 +442,19 @@ const TournamentsForm = () => {
                 name="height"
                 value={form.height}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.height ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.height ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
               {errors.height && <p className="text-red-600">{errors.height}</p>}
             </div>
 
             {/* teléfono */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="phone">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="phone"
+              >
                 Teléfono:
               </label>
               <input
@@ -397,14 +463,19 @@ const TournamentsForm = () => {
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.phone ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.phone ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
               {errors.phone && <p className="text-red-600">{errors.phone}</p>}
             </div>
 
             {/* entrenador */}
             <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="trainer">
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="trainer"
+              >
                 Entrenador:
               </label>
               <input
@@ -413,33 +484,36 @@ const TournamentsForm = () => {
                 name="trainer"
                 value={form.trainer}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.trainer ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+                className={`w-full px-4 py-2 border ${
+                  errors.trainer ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
-              {errors.trainer && <p className="text-red-600">{errors.trainer}</p>}
+              {errors.trainer && (
+                <p className="text-red-600">{errors.trainer}</p>
+              )}
             </div>
 
-              {/* foto carnet */}
-              <div>
-              <label className="block text-lg font-semibold mb-2" htmlFor="photo">
-                Foto Carnet:
+            {/* campo de subida de imagen */}
+            <div>
+              <label
+                className="block text-lg font-semibold mb-2"
+                htmlFor="profileImage"
+              >
+                Subir Imagen de Perfil:
               </label>
               <input
                 type="file"
-                id="photo"
-                name="photo"
+                id="profileImage"
+                name="profileImage"
                 accept="image/*"
-                ref={fileInputRef}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.photo ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+             
+                className={`w-full px-4 py-2 border ${
+                  errors.profileImage ? "border-red-500" : "border-gray-300"
+                } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
-              {errors.photo && <p className="text-red-600">{errors.photo}</p>}
-              {form.photo && (
-                <img
-                  src={URL.createObjectURL(form.photo)}
-                  alt="Preview"
-                  className="mt-2 rounded-lg shadow-md"
-                  style={{ maxWidth: "200px" }} // Ajusta el tamaño según tus necesidades
-                />
+              {errors.profileImage && (
+                <p className="text-red-600">{errors.profileImage}</p>
               )}
             </div>
 
@@ -465,8 +539,12 @@ const TournamentsForm = () => {
             className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
           >
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-2xl font-semibold text-primary-100 mb-4">Formulario enviado</h2>
-              <p className="mb-4 text-primary-100">Gracias, estamos procesando tu información.</p>
+              <h2 className="text-2xl font-semibold text-primary-100 mb-4">
+                Formulario enviado
+              </h2>
+              <p className="mb-4 text-primary-100">
+                Gracias, estamos procesando tu información.
+              </p>
               <button
                 onClick={() => setModalOpen(false)}
                 className="px-4 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition duration-200"
