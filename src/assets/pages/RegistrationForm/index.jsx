@@ -77,16 +77,24 @@ const TournamentsForm = () => {
     height: "",
     phone: "",
     trainer: "",
+    photo:'',
   });
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const formRef = useRef();
+  const fileInputRef = useRef(); // Agregamos ref para el input de archivo
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    const { name, value, files } = e.target;
+
+    // Si el cambio viene del input de archivo, actualiza 'photo' con el archivo seleccionado
+    if (name === "photo") {
+      setForm({ ...form, [name]: files[0] });
+    } else {
+      setForm({ ...form, [name]: value });
+    }
   };
 
   const validateForm = () => {
@@ -174,6 +182,7 @@ const TournamentsForm = () => {
             to_height: form.height,
             to_phone: form.phone,
             to_trainer: form.trainer,
+            to_photo:form.photo,
      
             message: "Formulario de Inscripción",
           },
@@ -407,6 +416,31 @@ const TournamentsForm = () => {
                 className={`w-full px-4 py-2 border ${errors.trainer ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
               />
               {errors.trainer && <p className="text-red-600">{errors.trainer}</p>}
+            </div>
+
+              {/* foto carnet */}
+              <div>
+              <label className="block text-lg font-semibold mb-2" htmlFor="photo">
+                Foto Carnet:
+              </label>
+              <input
+                type="file"
+                id="photo"
+                name="photo"
+                accept="image/*"
+                ref={fileInputRef}
+                onChange={handleChange}
+                className={`w-full px-4 py-2 border ${errors.photo ? "border-red-500" : "border-gray-300"} rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
+              />
+              {errors.photo && <p className="text-red-600">{errors.photo}</p>}
+              {form.photo && (
+                <img
+                  src={URL.createObjectURL(form.photo)}
+                  alt="Preview"
+                  className="mt-2 rounded-lg shadow-md"
+                  style={{ maxWidth: "200px" }} // Ajusta el tamaño según tus necesidades
+                />
+              )}
             </div>
 
             <div className="flex justify-end">

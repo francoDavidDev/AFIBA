@@ -6,7 +6,7 @@ import Sponsors from "../Sponsors";
 const SponsorsCarrousel = () => {
   return (
     <motion.section
-      className="h-[500px] md:h-[600px] pt-10 mb-20"
+      className="h-[auto] pt-10 mb-20"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}

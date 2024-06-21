@@ -1,98 +1,48 @@
 import React from "react";
-// Import react-slick
-import Slider from "react-slick";
-// Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { GIMS } from "../../data/gims";
-import { motion } from 'framer-motion';
+import { FiArrowRight } from 'react-icons/fi'; // Importa el ícono de flecha derecha desde react-icons
 
 const CarrouselStore = () => {
-  const slideVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+
+  const variants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+    hover: { y: -5 } // Mueve el ícono 5 unidades hacia arriba al hacer hover
   };
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    centerMode: true,
-    responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-          
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-  };
+
   return (
-    <section className="h-auto py-20">
-      <div className="p-5 ">
+    <section className="w-full h-auto section_cards">
+      <div className="">
         <h4 className="h4 font-black">GIMNASIOS RECOMENDADOS</h4>
       </div>
-      <div>
-      <Slider {...settings} className="slicsk-slider">
-          {GIMS.map((item, i) => {
-            return (
+      <div className="m-auto container_cards w-full mt-10">
+        {GIMS.map((item, i) => (
+          <motion.div
+            key={i}
+            className="carrousel-item cursor-pointer"
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+            variants={variants}
+          >
+            <div className="relative">
+              <img src={item.image} alt="" className="image_cards" />
               <motion.div
-              key={i}
-              className="overflow-hidden rounded-lg m-2 w-full h-[400px] cursor-pointer transform transition-transform duration-300 shadow-lg relative"
-              variants={slideVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.div
-                className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 hover:bg-black/60 bg-no-repeat bg-cover bg-center rounded-lg transition-colors duration-300 p-4"
-                style={{ backgroundImage: `url(${item.image})` }}
-                whileHover={{ scale: 1.1 }}
+                className="click-icon absolute top-1 right-1 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full p-2 opacity-0 transition-opacity duration-300 hover:opacity-100"
+                variants={variants}
               >
-                <motion.p
-                  className="text-white text-2xl font-bold"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {item.name}
-                </motion.p>
                 <motion.a
                   href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-full"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
+                  target='_blank'
+                  className="text-white"
                 >
-                  Ir
+                  <FiArrowRight size={24} />
                 </motion.a>
               </motion.div>
-            </motion.div>
-            );
-          })}
-        </Slider>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
