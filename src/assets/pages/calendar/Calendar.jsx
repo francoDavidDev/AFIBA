@@ -36,15 +36,10 @@ const Calendar = () => {
   };
 
   const sortTournaments = (tournaments) => {
-    return tournaments.sort((a, b) => {
-      if (a.inscriptions === b.inscriptions) {
-        return a.status.localeCompare(b.status);
-      }
-      return b.inscriptions - a.inscriptions;
-    });
+    return tournaments.sort((a, b) => b.inscriptions - a.inscriptions || a.status.localeCompare(b.status));
   };
 
-  const filteredTournaments = filter === 'todos' ? sortTournaments([...TOURNAMENTS_2024]) : TOURNAMENTS_2024.filter(tournament => tournament.status === filter);
+  const filteredTournaments = filter === 'todos' ? sortTournaments([...TOURNAMENTS_2024]) : sortTournaments(TOURNAMENTS_2024.filter(tournament => tournament.status === filter));
 
   return (
     <div className="container mx-auto py-12 px-8">
