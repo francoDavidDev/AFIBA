@@ -256,7 +256,7 @@ const TournamentsForm = () => {
       <div className="w-full max-w-5xl mx-auto flex flex-col justify-between items-start">
         <div className="w-full bg-white p-8 rounded-lg shadow-lg">
           <h3 className="h3 text-primary-100 text-2xl font-semibold mb-6 text-center">
-            INSCRIPCIÓN TORNEO DE INDEPENDENCIA
+            PREINSCRIPCION COPA PROVINCIA 2024
           </h3>
           <form className="space-y-6" ref={formRef} onSubmit={handleSubmit} encType="multipart/form-data" method="post">
             {/* email - correo */}
@@ -497,13 +497,15 @@ const TournamentsForm = () => {
               animate={{ y: 0 }}
               exit={{ y: -50 }}
             >
-              <h3 className="text-lg font-semibold mb-4">Formulario Enviado!</h3>
-              <p className="mb-6">Gracias por tu inscripción. Nos pondremos en contacto contigo pronto.</p>
+              <h3 className="text-lg font-semibold mb-4 text-primary-100">Formulario Enviado!</h3>
+              <p className="mb-6 text-primary-100">Gracias por tu preinscripción. Nos llegó tu formulario con éxito.</p>
               <button
                 className="bg-primary-100 hover:bg-primary-200 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
                 onClick={() => setModalOpen(false)}
               >
-                Cerrar
+                <Link to={`/`} >
+                Cerrar</Link>
+               
               </button>
             </motion.div>
           </motion.div>

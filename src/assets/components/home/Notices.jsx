@@ -1,5 +1,4 @@
 import React from "react";
-import image1 from "../../imgs/home/image1.png";
 import { IoShareSocial } from "react-icons/io5";
 import { NOTICES } from "../../data/home";
 import { Link } from "react-router-dom";
@@ -73,10 +72,10 @@ const Notices = () => {
         <h4 className="h4 p">EVENTO PROXIMO</h4>
         {NOTICES.map((item, i) => {
           if (item.id === "3") {
-            const itemUrl = `#/NoticesViews/${item.id}`;
+            const itemUrl = `/RegistrationForm`;
             return (
               <div key={i}>
-                <Link to={`/NoticesViews/${item.id}`} className="block">
+                <Link to={`/RegistrationForm`} className="block">
                   <div className="overflow-hidden rounded-xl">
                     <motion.div
                       onMouseEnter={() => anime()}
@@ -117,16 +116,24 @@ const Notices = () => {
               const itemUrl = `#/NoticesViews/${item.id}`;
               return (
                 <div key={i} className="relative w-full md:w-[45%] sm:w-full h-[200px] md:h-[400px] overflow-hidden rounded-xl flex flex-col justify-end cursor-pointer hover:scale-105 duration-200 hover:rounded-xl bg-bottom bg-cover bg-no-repeat" style={{ backgroundImage: `url('${item.image}')` }}>
-                  <Link to={`/NoticesViews/${item.id}`} className="h-full w-full bg-black bg-opacity-50 p-4 flex flex-col justify-end">
-                    <p className="text-white transition-colors duration-300 hover:text-[#0f457]">{item.description}</p>
-                  </Link>
-                  <IoShareSocial
-                    className="absolute top-2 right-2 text-2xl text-white cursor-pointer"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      shareLink(window.location.origin + itemUrl);
-                    }}
-                  />
+                  {item.pdf ? (
+                    <a href={item.pdf} download className="h-full w-full bg-black bg-opacity-50 p-4 flex flex-col justify-end">
+                      <p className="text-white transition-colors duration-300 hover:text-[#0f457]">{item.description}</p>
+                    </a>
+                  ) : (
+                    <Link to={`/NoticesViews/${item.id}`} className="h-full w-full bg-black bg-opacity-50 p-4 flex flex-col justify-end">
+                      <p className="text-white transition-colors duration-300 hover:text-[#0f457]">{item.description}</p>
+                    </Link>
+                  )}
+                  {!item.pdf && item.id !== "3" && (
+                    <IoShareSocial
+                      className="absolute top-2 right-2 text-2xl text-white cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        shareLink(window.location.origin + itemUrl);
+                      }}
+                    />
+                  )}
                 </div>
               );
             } else {

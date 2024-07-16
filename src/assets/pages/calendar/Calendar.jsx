@@ -12,8 +12,8 @@ const Calendar = () => {
   const TOURNAMENTS_2024 = [
     { name: "Sanson Cup", date: "2024-02-24", location: "Palacio de deportes Mar del Plata", info: '2266440219', hour: '10:00 hs', image: image5, status: 'terminado', registration: '#', inscriptions: false },
     { name: "Campeonato Apertura", date: "2024-05-12", location: "Colon 600 - MERLO", info: '2204081490', hour: '14:00 hs', image: image2, status: 'terminado', registration: '#', inscriptions: false },
-    { name: "Copa independencia", date: "2024-07-07", location: "San Andres de Giles Bs.As", hour: '14:00 hs', info: '+54 92325 47-9243', image: image1, status: 'presente', registration: '#', inscriptions: true },
-    { name: "Copa Provincia", date: "2024-07-21", location: "Arieta 2917 - San Justo - Bs.As", info: '1127796576 o 1125193782', hour: '11:00 hs', image: image4, status: 'presente', registration: '#', inscriptions: false },
+    { name: "Copa independencia", date: "2024-07-07", location: "San Andres de Giles Bs.As", hour: '14:00 hs', info: '+54 92325 47-9243', image: image1, status: 'presente', registration: '#', inscriptions: false },
+    { name: "Copa Provincia", date: "2024-07-21", location: "Arieta 2917 - San Justo - Bs.As", info: '1127796576 o 1125193782', hour: '11:00 hs', image: image4, status: 'presente', registration: '#', inscriptions: true },
     { name: "Campeonato Bonaerense", date: "2024-10-13", location: "La Plata Bs.As", info: '+54 92281 58-9117', hour: '09:00 hs', image: image3, status: 'presente', registration: '#', inscriptions: false }
   ];
   
@@ -155,7 +155,7 @@ const Calendar = () => {
               <Link to={`/RegistrationForm`} className={selectedTournament.inscriptions ? "text-blue-400 hover:underline" : "line-through text-gray-500 pointer-events-none block mb-2"}>{selectedTournament.inscriptions ? 'Inscripción' : 'Inscripción no disponible'}</Link>
             </div>
             <div className="mt-2">
-              <Link to={`/Tournaments`} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Ver Reglas</Link>
+              <Link to={`/Rules`} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Ver Reglas</Link>
             </div>
             <div className="mt-4 flex justify-end">
               <button className="bg-red-600 text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300" onClick={closeModal}>Cerrar</button>

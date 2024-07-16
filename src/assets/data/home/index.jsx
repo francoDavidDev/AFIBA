@@ -2,6 +2,8 @@ import imageCarrousel1 from "../../imgs/home/carrouselHero/image1.png";
 import imageCarrousel2 from "../../imgs/home/carrouselHero/image2.png";
 import imageCarrousel3 from "../../imgs/home/carrouselHero/image3.png";
 
+import resultados_independencia2024 from '../../pdf/results/2024/RESULTADO_COPA_INDEPENDENCIA.pdf'
+
 
 export const CARROUSEL = [
   {
@@ -26,8 +28,8 @@ export const CARROUSEL = [
 
 
 import ASAMBLEA_AFIBA_MARZO_2024 from '../../imgs/notice/ASAMBLEA_AFIBA_MARZO_2024.jpg';
-import ASAMBLEA_AFIBA_MARZO_2_2024 from '../../imgs/notice/ASAMBLEA_AFIBA_MARZO_2_2024.jpg';
-import julio_7 from '../../imgs/notice/7_julio.jpg';
+import resultados_indepencia_img from '../../imgs/notice/resultados_independencia.png';
+import banner from '../../imgs/notice/21_julio.jpg';
 import calendario from "../../imgs/home/notices/calendario.jpg";
 
 export const NOTICES = [
@@ -37,18 +39,21 @@ export const NOTICES = [
     title: "ASAMBLEA AFIBA MARZO 2024",
     description: "El Ultimo 16 Marzo De 2024 Afiba Famf Ifbb Renovó Su Comision Directiva Para El Nuevo Ciclo 2024 / 2028.Presidenta: Maria Mernes Vicepresidente: Leonardo Zarate Secretario: Pablo Roldan Tesorero: Alejandro Maidana.",
     image: ASAMBLEA_AFIBA_MARZO_2024,
+    pdf:null
   },
   {
     id: "2",
-    title: "ASAMBLEA AFIBA MARZO 2 2024",
-    description: "El Ultimo 16 Marzo De 2024 Afiba Famf Ifbb Renovó Su Comision Directiva Para El Nuevo Ciclo 2024 / 2028.",
-    image: ASAMBLEA_AFIBA_MARZO_2_2024,
+    title: "",
+    description: "DESCARGA LOS RESULTADOS DE LA COPA INDEPENDENCIA 2024",
+    image: resultados_indepencia_img,
+    pdf:resultados_independencia2024,
   },
   {
     id: "3",
-    title: "COPA INDEPENDENCIA 7 DE JULIO 2024",
-    description: "La Copa Independencia 2024 es uno de los eventos más destacados del calendario de fisicoculturismo en Argentina, organizada por AFIBA. Este prestigioso torneo se llevará a cabo el 7 de julio de 2024 en Buenos Aires, una ciudad conocida por su vibrante cultura y pasión por el deporte.",
-    image: julio_7,
+    title: "COPA PROVINCIA 21 DE JULIO.",
+    description: "Haz clic en la imagen para poder preinscribirte en la COPA PROVINCIA 2024.",
+    image: banner,
+    pdf:null
   },
 ];
 
