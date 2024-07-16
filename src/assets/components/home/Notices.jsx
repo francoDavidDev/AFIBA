@@ -75,7 +75,7 @@ const Notices = () => {
             const itemUrl = `/RegistrationForm`;
             return (
               <div key={i}>
-                <Link to={`/RegistrationForm`} className="block">
+                <Link to={`/navigationButtons`} className="block">
                   <div className="overflow-hidden rounded-xl">
                     <motion.div
                       onMouseEnter={() => anime()}

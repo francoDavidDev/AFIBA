@@ -65,7 +65,7 @@ const Tournaments = () => {
               animate="animate"
               whileHover="hover"
             >
-              <img src={tournament.src} alt={tournament.title} className="w-full h-96 object-cover" />
+              <img src={tournament.src} alt={tournament.title} className="w-full h-96 object-cover rounded-t-lg" />
               <div className="p-4 bg-gray-100">
                 <h3 className="text-lg font-semibold text-center text-primary-100">{tournament.title}</h3>
               </div>

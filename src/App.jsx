@@ -8,6 +8,11 @@ import SponsorVideos from "./assets/components/SponsorVideos";
 import SponsorsCarrousel from "./assets/components/home/SponsorsCarrousel";
 
 // Importa componentes de forma diferida
+const NavigationButtons = lazy(() =>
+  import("./assets/components/NavigationButtons")
+);
+
+const EventInfo = lazy(() => import("./assets/components/EventInfo"));
 const Header = lazy(() => import("./assets/components/header/Header"));
 const Home = lazy(() => import("./assets/pages/home"));
 const NoticesViews = lazy(() =>
@@ -36,7 +41,6 @@ const MaleModalities = lazy(() =>
 const FemaleModalities = lazy(() =>
   import("./assets/components/views/home/FemaleModalities")
 );
-
 
 // Definición de variantes y transición
 const pageVariants = {
@@ -100,7 +104,7 @@ const AnimatedRoutes = () => {
           path="/modalidades_femeninas"
           element={<PageWrapper component={<FemaleModalities />} />}
         />
-      
+
         <Route
           path="/Results"
           element={<PageWrapper component={<Results />} />}
@@ -113,6 +117,16 @@ const AnimatedRoutes = () => {
         <Route
           path="/torneos"
           element={<PageWrapper component={<Tournaments />} />}
+        />
+
+        <Route
+          path="/navigationButtons"
+          element={<PageWrapper component={<NavigationButtons />} />}
+        />
+
+        <Route
+          path="/eventInfo"
+          element={<PageWrapper component={<EventInfo />} />}
         />
       </Routes>
     </AnimatePresence>
@@ -143,7 +157,7 @@ function App() {
         <HashRouter>
           <Header />
           <AnimatedRoutes />
-          
+
           <SponsorVideos />
           <Footer />
         </HashRouter>

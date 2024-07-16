@@ -23,6 +23,19 @@ import image19 from "../../imgs/about/staff/image19.jpeg";
 import image20 from "../../imgs/about/staff/image20.jpeg";
 import image21 from "../../imgs/about/staff/image21.jpeg";
 
+import image22 from "../../imgs/about/staff/image22.jpg";
+import image23 from "../../imgs/about/staff/image23.jpg";
+import image24 from "../../imgs/about/staff/image24.jpg";
+import image25 from "../../imgs/about/staff/image25.jpg";
+import image26 from "../../imgs/about/staff/image26.jpg";
+import image27 from "../../imgs/about/staff/image27.jpg";
+import image28 from "../../imgs/about/staff/image28.jpg";
+import image29 from "../../imgs/about/staff/image29.jpg";
+import image30 from "../../imgs/about/staff/image30.jpg";
+import image31 from "../../imgs/about/staff/image31.jpg";
+import image32 from "../../imgs/about/staff/image32.jpg";
+import image33 from "../../imgs/about/staff/image33.jpg";
+
 
 
 
@@ -49,6 +62,19 @@ export const STAFF = [
   { url: image20, type:'image' },
   { url: image21, type:'image' },
 
+
+  { url: image22, type: 'image' },
+  { url: image23, type: 'image' },
+  { url: image24, type: 'image' },
+  { url: image25, type: 'image' },
+  { url: image26, type: 'image' },
+  { url: image27, type: 'image' },
+  { url: image28, type: 'image' },
+  { url: image29, type: 'image' },
+  { url: image30, type: 'image' },
+  { url: image31, type: 'image' },
+  { url: image32, type: 'image' },
+  { url: image33, type: 'image' },
 
   
 ];

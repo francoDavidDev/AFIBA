@@ -243,6 +243,138 @@ import sanson_image_89 from '../../imgs/tornaments/sanson_cup_2024/image_89.png'
 import sanson_image_90 from '../../imgs/tornaments/sanson_cup_2024/image_90.png';
 import sanson_image_91 from '../../imgs/tornaments/sanson_cup_2024/image_91.png';
 
+
+
+//INDEPENDENCIA 2024
+import banner_main_independencia from '../../imgs/tornaments/independencia_2024/21_julio.jpg';
+import independencia1 from '../../imgs/tornaments/independencia_2024/image1.jpg';
+import independencia2 from '../../imgs/tornaments/independencia_2024/image2.jpg';
+import independencia3 from '../../imgs/tornaments/independencia_2024/image3.jpg';
+import independencia4 from '../../imgs/tornaments/independencia_2024/image4.jpg';
+import independencia5 from '../../imgs/tornaments/independencia_2024/image5.jpg';
+import independencia6 from '../../imgs/tornaments/independencia_2024/image6.jpg';
+import independencia7 from '../../imgs/tornaments/independencia_2024/image7.jpg';
+import independencia8 from '../../imgs/tornaments/independencia_2024/image8.jpg';
+import independencia9 from '../../imgs/tornaments/independencia_2024/image9.jpg';
+import independencia10 from '../../imgs/tornaments/independencia_2024/image10.jpg';
+import independencia11 from '../../imgs/tornaments/independencia_2024/image11.jpg';
+import independencia12 from '../../imgs/tornaments/independencia_2024/image12.jpg';
+import independencia13 from '../../imgs/tornaments/independencia_2024/image13.jpg';
+import independencia14 from '../../imgs/tornaments/independencia_2024/image14.jpg';
+import independencia15 from '../../imgs/tornaments/independencia_2024/image15.jpg';
+import independencia16 from '../../imgs/tornaments/independencia_2024/image16.jpg';
+import independencia17 from '../../imgs/tornaments/independencia_2024/image17.jpg';
+import independencia18 from '../../imgs/tornaments/independencia_2024/image18.jpg';
+import independencia19 from '../../imgs/tornaments/independencia_2024/image19.jpg';
+import independencia20 from '../../imgs/tornaments/independencia_2024/image20.jpg';
+import independencia21 from '../../imgs/tornaments/independencia_2024/image21.jpg';
+import independencia22 from '../../imgs/tornaments/independencia_2024/image22.jpg';
+import independencia23 from '../../imgs/tornaments/independencia_2024/image23.jpg';
+import independencia24 from '../../imgs/tornaments/independencia_2024/image24.jpg';
+import independencia25 from '../../imgs/tornaments/independencia_2024/image25.jpg';
+import independencia26 from '../../imgs/tornaments/independencia_2024/image26.jpg';
+import independencia27 from '../../imgs/tornaments/independencia_2024/image27.jpg';
+import independencia28 from '../../imgs/tornaments/independencia_2024/image28.jpg';
+import independencia29 from '../../imgs/tornaments/independencia_2024/image29.jpg';
+import independencia30 from '../../imgs/tornaments/independencia_2024/image30.jpg';
+import independencia31 from '../../imgs/tornaments/independencia_2024/image31.jpg';
+import independencia32 from '../../imgs/tornaments/independencia_2024/image32.jpg';
+import independencia33 from '../../imgs/tornaments/independencia_2024/image33.jpg';
+import independencia34 from '../../imgs/tornaments/independencia_2024/image34.jpg';
+import independencia35 from '../../imgs/tornaments/independencia_2024/image35.jpg';
+import independencia36 from '../../imgs/tornaments/independencia_2024/image36.jpg';
+import independencia37 from '../../imgs/tornaments/independencia_2024/image37.jpg';
+import independencia38 from '../../imgs/tornaments/independencia_2024/image38.jpg';
+import independencia39 from '../../imgs/tornaments/independencia_2024/image39.jpg';
+import independencia40 from '../../imgs/tornaments/independencia_2024/image40.jpg';
+import independencia41 from '../../imgs/tornaments/independencia_2024/image41.jpg';
+import independencia42 from '../../imgs/tornaments/independencia_2024/image42.jpg';
+import independencia43 from '../../imgs/tornaments/independencia_2024/image43.jpg';
+import independencia44 from '../../imgs/tornaments/independencia_2024/image44.jpg';
+import independencia45 from '../../imgs/tornaments/independencia_2024/image45.jpg';
+import independencia46 from '../../imgs/tornaments/independencia_2024/image46.jpg';
+import independencia47 from '../../imgs/tornaments/independencia_2024/image47.jpg';
+import independencia48 from '../../imgs/tornaments/independencia_2024/image48.jpg';
+import independencia49 from '../../imgs/tornaments/independencia_2024/image49.jpg';
+import independencia50 from '../../imgs/tornaments/independencia_2024/image50.jpg';
+import independencia51 from '../../imgs/tornaments/independencia_2024/image51.jpg';
+import independencia52 from '../../imgs/tornaments/independencia_2024/image52.jpg';
+import independencia53 from '../../imgs/tornaments/independencia_2024/image53.jpg';
+import independencia54 from '../../imgs/tornaments/independencia_2024/image54.jpg';
+import independencia55 from '../../imgs/tornaments/independencia_2024/image55.jpg';
+import independencia56 from '../../imgs/tornaments/independencia_2024/image56.jpg';
+import independencia57 from '../../imgs/tornaments/independencia_2024/image57.jpg';
+import independencia58 from '../../imgs/tornaments/independencia_2024/image58.jpg';
+import independencia59 from '../../imgs/tornaments/independencia_2024/image59.jpg';
+import independencia60 from '../../imgs/tornaments/independencia_2024/image60.jpg';
+import independencia61 from '../../imgs/tornaments/independencia_2024/image61.jpg';
+import independencia62 from '../../imgs/tornaments/independencia_2024/image62.jpg';
+import independencia63 from '../../imgs/tornaments/independencia_2024/image63.jpg';
+import independencia64 from '../../imgs/tornaments/independencia_2024/image64.jpg';
+import independencia65 from '../../imgs/tornaments/independencia_2024/image65.jpg';
+import independencia66 from '../../imgs/tornaments/independencia_2024/image66.jpg';
+import independencia67 from '../../imgs/tornaments/independencia_2024/image67.jpg';
+import independencia68 from '../../imgs/tornaments/independencia_2024/image68.jpg';
+import independencia69 from '../../imgs/tornaments/independencia_2024/image69.jpg';
+import independencia70 from '../../imgs/tornaments/independencia_2024/image70.jpg';
+import independencia71 from '../../imgs/tornaments/independencia_2024/image71.jpg';
+import independencia72 from '../../imgs/tornaments/independencia_2024/image72.jpg';
+import independencia73 from '../../imgs/tornaments/independencia_2024/image73.jpg';
+import independencia74 from '../../imgs/tornaments/independencia_2024/image74.jpg';
+import independencia75 from '../../imgs/tornaments/independencia_2024/image75.jpg';
+import independencia76 from '../../imgs/tornaments/independencia_2024/image76.jpg';
+import independencia77 from '../../imgs/tornaments/independencia_2024/image77.jpg';
+import independencia78 from '../../imgs/tornaments/independencia_2024/image78.jpg';
+import independencia79 from '../../imgs/tornaments/independencia_2024/image79.jpg';
+import independencia80 from '../../imgs/tornaments/independencia_2024/image80.jpg';
+import independencia81 from '../../imgs/tornaments/independencia_2024/image81.jpg';
+import independencia82 from '../../imgs/tornaments/independencia_2024/image82.jpg';
+import independencia83 from '../../imgs/tornaments/independencia_2024/image83.jpg';
+import independencia84 from '../../imgs/tornaments/independencia_2024/image84.jpg';
+import independencia85 from '../../imgs/tornaments/independencia_2024/image85.jpg';
+import independencia86 from '../../imgs/tornaments/independencia_2024/image86.jpg';
+import independencia87 from '../../imgs/tornaments/independencia_2024/image87.jpg';
+import independencia88 from '../../imgs/tornaments/independencia_2024/image88.jpg';
+import independencia89 from '../../imgs/tornaments/independencia_2024/image89.jpg';
+import independencia90 from '../../imgs/tornaments/independencia_2024/image90.jpg';
+import independencia91 from '../../imgs/tornaments/independencia_2024/image91.jpg';
+import independencia92 from '../../imgs/tornaments/independencia_2024/image92.jpg';
+import independencia93 from '../../imgs/tornaments/independencia_2024/image93.jpg';
+import independencia94 from '../../imgs/tornaments/independencia_2024/image94.jpg';
+import independencia95 from '../../imgs/tornaments/independencia_2024/image95.jpg';
+import independencia96 from '../../imgs/tornaments/independencia_2024/image96.jpg';
+import independencia97 from '../../imgs/tornaments/independencia_2024/image97.jpg';
+import independencia98 from '../../imgs/tornaments/independencia_2024/image98.jpg';
+import independencia99 from '../../imgs/tornaments/independencia_2024/image99.jpg';
+import independencia100 from '../../imgs/tornaments/independencia_2024/image100.jpg';
+import independencia101 from '../../imgs/tornaments/independencia_2024/image101.jpg';
+import independencia102 from '../../imgs/tornaments/independencia_2024/image102.jpg';
+import independencia103 from '../../imgs/tornaments/independencia_2024/image103.jpg';
+import independencia104 from '../../imgs/tornaments/independencia_2024/image104.jpg';
+import independencia105 from '../../imgs/tornaments/independencia_2024/image105.jpg';
+import independencia106 from '../../imgs/tornaments/independencia_2024/image106.jpg';
+import independencia107 from '../../imgs/tornaments/independencia_2024/image107.jpg';
+import independencia108 from '../../imgs/tornaments/independencia_2024/image108.jpg';
+import independencia109 from '../../imgs/tornaments/independencia_2024/image109.jpg';
+import independencia110 from '../../imgs/tornaments/independencia_2024/image110.jpg';
+import independencia111 from '../../imgs/tornaments/independencia_2024/image111.jpg';
+import independencia112 from '../../imgs/tornaments/independencia_2024/image112.jpg';
+import independencia113 from '../../imgs/tornaments/independencia_2024/image113.jpg';
+import independencia114 from '../../imgs/tornaments/independencia_2024/image114.jpg';
+import independencia115 from '../../imgs/tornaments/independencia_2024/image115.jpg';
+import independencia116 from '../../imgs/tornaments/independencia_2024/image116.jpg';
+import independencia117 from '../../imgs/tornaments/independencia_2024/image117.jpg';
+import independencia118 from '../../imgs/tornaments/independencia_2024/image118.jpg';
+import independencia119 from '../../imgs/tornaments/independencia_2024/image119.jpg';
+import independencia120 from '../../imgs/tornaments/independencia_2024/image120.jpg';
+import independencia121 from '../../imgs/tornaments/independencia_2024/image121.jpg';
+import independencia122 from '../../imgs/tornaments/independencia_2024/image122.jpg';
+import independencia123 from '../../imgs/tornaments/independencia_2024/image123.jpg';
+import independencia124 from '../../imgs/tornaments/independencia_2024/image124.jpg';
+import independencia125 from '../../imgs/tornaments/independencia_2024/image125.jpg';
+import independencia126 from '../../imgs/tornaments/independencia_2024/image126.jpg';
+import independencia127 from '../../imgs/tornaments/independencia_2024/image127.jpg';
+
 export const TOURNAMENTS_2024_IMAGES = [
   { 
     id: 0, 
@@ -284,5 +416,28 @@ export const TOURNAMENTS_2024_IMAGES = [
       sanson_image_81, sanson_image_82, sanson_image_83, sanson_image_84, sanson_image_85, sanson_image_86, sanson_image_87, sanson_image_88, sanson_image_89, sanson_image_90,
       sanson_image_91
     ] 
+  },
+  {
+    id: 2,
+    src: banner_main_independencia,
+    tag: 'independencia_2024',
+    title: 'INDEPENDENCIA 2024',
+    images: [
+      independencia1, independencia2, independencia3, independencia4, independencia5, independencia6, independencia7, independencia8, independencia9, independencia10,
+      independencia11, independencia12, independencia13, independencia14, independencia15, independencia16, independencia17, independencia18, independencia19, independencia20,
+      independencia21, independencia22, independencia23, independencia24, independencia25, independencia26, independencia27, independencia28, independencia29, independencia30,
+      independencia31, independencia32, independencia33, independencia34, independencia35, independencia36, independencia37, independencia38, independencia39, independencia40,
+      independencia41, independencia42, independencia43, independencia44, independencia45, independencia46, independencia47, independencia48, independencia49, independencia50,
+      independencia51, independencia52, independencia53, independencia54, independencia55, independencia56, independencia57, independencia58, independencia59, independencia60,
+      independencia61, independencia62, independencia63, independencia64, independencia65, independencia66, independencia67, independencia68, independencia69, independencia70,
+      independencia71, independencia72, independencia73, independencia74, independencia75, independencia76, independencia77, independencia78, independencia79, independencia80,
+      independencia81, independencia82, independencia83, independencia84, independencia85, independencia86, independencia87, independencia88, independencia89, independencia90,
+      independencia91, independencia92, independencia93, independencia94, independencia95, independencia96, independencia97, independencia98, independencia99, independencia100,
+      independencia101, independencia102, independencia103, independencia104, independencia105, independencia106, independencia107, independencia108, independencia109, independencia110,
+      independencia111, independencia112, independencia113, independencia114, independencia115, independencia116, independencia117, independencia118, independencia119, independencia120,
+      independencia121, independencia122, independencia123, independencia124, independencia125, independencia126, independencia127
+    ]
   }
+  
+  
 ];
