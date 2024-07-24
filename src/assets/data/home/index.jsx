@@ -29,7 +29,7 @@ export const CARROUSEL = [
 
 import ASAMBLEA_AFIBA_MARZO_2024 from '../../imgs/notice/ASAMBLEA_AFIBA_MARZO_2024.jpg';
 import resultados_indepencia_img from '../../imgs/notice/resultados_independencia.png';
-import banner from '../../imgs/notice/21_julio.jpg';
+import banner from '../../imgs/notice/13_octubre.jpg';
 import calendario from "../../imgs/home/notices/calendario.jpg";
 
 export const NOTICES = [
@@ -39,7 +39,7 @@ export const NOTICES = [
     title: "ASAMBLEA AFIBA MARZO 2024",
     description: "El Ultimo 16 Marzo De 2024 Afiba Famf Ifbb Renovó Su Comision Directiva Para El Nuevo Ciclo 2024 / 2028.Presidenta: Maria Mernes Vicepresidente: Leonardo Zarate Secretario: Pablo Roldan Tesorero: Alejandro Maidana.",
     image: ASAMBLEA_AFIBA_MARZO_2024,
-    pdf:null
+    pdf:null,
   },
   {
     id: "2",
@@ -50,8 +50,8 @@ export const NOTICES = [
   },
   {
     id: "3",
-    title: "COPA PROVINCIA 21 DE JULIO.",
-    description: "Haz clic en la imagen para poder preinscribirte en la COPA PROVINCIA 2024.",
+    title: "CAMPEONATO BONAERENSE.",
+    description: "Haz clic en la imagen para poder preinscribirte en el CAMPEONATO BONAERENSE.",
     image: banner,
     pdf:null
   },

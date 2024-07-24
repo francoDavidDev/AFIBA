@@ -256,7 +256,7 @@ const TournamentsForm = () => {
       <div className="w-full max-w-5xl mx-auto flex flex-col justify-between items-start">
         <div className="w-full bg-white p-8 rounded-lg shadow-lg">
           <h3 className="h3 text-primary-100 text-2xl font-semibold mb-6 text-center">
-            PREINSCRIPCION COPA PROVINCIA 2024
+            PREINSCRIPCION CAMPEONATO BONAERENSE 2024
           </h3>
           <form className="space-y-6" ref={formRef} onSubmit={handleSubmit} encType="multipart/form-data" method="post">
             {/* email - correo */}

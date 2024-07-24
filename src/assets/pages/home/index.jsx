@@ -1,5 +1,7 @@
 import React, { Suspense } from "react";
 import { motion } from "framer-motion";
+import Result from "postcss/lib/result";
+import Results from "../../components/home/Results";
 
 // Lazy-loaded components
 const BannerMain = React.lazy(() => import("../../components/home/BannerMain"));
@@ -40,8 +42,14 @@ const Home = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mb-8">
+          <Results />
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="mb-8">
           <HomeCalendar />
         </motion.div>
+
+        
 
         <motion.div variants={itemVariants} className="mb-8">
           <SponsorsCarrousel />
@@ -51,6 +59,8 @@ const Home = () => {
           <TournamentsAfiba />
         </motion.div>
 
+
+        
         <motion.div variants={itemVariants} className="mb-8">
           <CarrouselStore />
         </motion.div>
