@@ -6,6 +6,7 @@ import image2 from '../../imgs/calendar/12_mayo.jpg';
 import image3 from '../../imgs/calendar/13_octubre.jpg';
 import image4 from '../../imgs/calendar/21_julio.jpg';
 import image5 from '../../imgs/calendar/24_febrero.jpg';
+import image6 from '../../imgs/calendar/15_diciembre.jpg';
 import { Link } from 'react-router-dom';
 
 const Calendar = () => {
@@ -13,13 +14,13 @@ const Calendar = () => {
     { name: "Sanson Cup", date: "2024-02-24", location: "Palacio de deportes Mar del Plata", info: '2266440219', hour: '10:00 hs', image: image5, status: 'terminado', registration: '#', inscriptions: false },
     { name: "Campeonato Apertura", date: "2024-05-12", location: "Colon 600 - MERLO", info: '2204081490', hour: '14:00 hs', image: image2, status: 'terminado', registration: '#', inscriptions: false },
     { name: "Copa independencia", date: "2024-07-07", location: "San Andres de Giles Bs.As", hour: '14:00 hs', info: '+54 92325 47-9243', image: image1, status: 'presente', registration: '#', inscriptions: false },
-    { name: "Copa Provincia", date: "2024-07-21", location: "Arieta 2917 - San Justo - Bs.As", info: '1127796576 o 1125193782', hour: '11:00 hs', image: image4, status: 'presente', registration: '#', inscriptions: true },
-    { name: "Campeonato Bonaerense", date: "2024-10-13", location: "La Plata Bs.As", info: '+54 92281 58-9117', hour: '09:00 hs', image: image3, status: 'presente', registration: '#', inscriptions: false }
+    { name: "Copa Provincia", date: "2024-07-21", location: "Arieta 2917 - San Justo - Bs.As", info: '1127796576 o 1125193782', hour: '11:00 hs', image: image4, status: 'terminado', registration: '#', inscriptions: true },
+    { name: "Campeonato Bonaerense", date: "2024-10-13", location: "La Plata Bs.As", info: '+54 92281 58-9117', hour: '09:00 hs', image: image3, status: 'presente', registration: '#', inscriptions: false },
+    { name: "Campeonato Clausura", date: "2024-12-15", location: "Gregorio De La Ferrere", info: '+54 9 1128729216', hour: '--', image: image6, status: 'presente', registration: '#', inscriptions: false }
   ];
-  
+
   const [filter, setFilter] = useState('presente');
   const [selectedTournament, setSelectedTournament] = useState(null);
-  const [showImage, setShowImage] = useState(false);
 
   const handleFilterChange = (filterValue) => {
     setFilter(filterValue);
@@ -27,12 +28,15 @@ const Calendar = () => {
 
   const handleCardClick = (tournament) => {
     setSelectedTournament(tournament);
-    setShowImage(true);
   };
 
   const closeModal = () => {
     setSelectedTournament(null);
-    setShowImage(false);
+  };
+
+  const formatDate = (dateString) => {
+    const [year, month, day] = dateString.split('-');
+    return `${day}-${month}-${year}`;
   };
 
   const sortTournaments = (tournaments) => {
@@ -106,63 +110,38 @@ const Calendar = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h2 className="text-2xl text-primary-100 font-bold mb-3">{tournament.name}</h2>
-              <p className="text-gray-700 mb-2"><span className="font-semibold">Fecha:</span> {tournament.date}</p>
+              <p className="text-gray-700 mb-2"><span className="font-semibold">Fecha:</span> {formatDate(tournament.date)}</p>
               <p className="text-gray-700 mb-2"><span className="font-semibold">Ubicación:</span> {tournament.location}</p>
               <p className="text-gray-700 mb-2"><span className="font-semibold">Hora:</span> {tournament.hour}</p>
-              <p className="text-gray-700 mb-4"><span className="font-semibold">Contacto:</span> {tournament.info}</p>
-              <div className="flex justify-end">
-                <button
-                  className={`bg-blue-500 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 ${tournament.status === 'terminado' || !tournament.inscriptions ? 'cursor-not-allowed' : 'hover:bg-blue-600'}`}
-                  onClick={() => tournament.status !== 'terminado' && tournament.inscriptions && handleCardClick(tournament)}
-                  disabled={tournament.status === 'terminado' || !tournament.inscriptions}
-                >
-                  Ver Detalles
-                </button>
-              </div>
+              <p className="text-gray-700 mb-2"><span className="font-semibold">Contacto:</span> {tournament.info}</p>
+              <button className="bg-primary-500 text-white font-bold py-2 px-4 rounded mt-4" onClick={() => handleCardClick(tournament)}>Más información</button>
             </motion.div>
           </motion.div>
         ))}
       </div>
 
-      {selectedTournament && showImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={closeModal}
-        >
+      {selectedTournament && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black opacity-50" onClick={closeModal}></div>
           <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0.9 }}
-            className="bg-gray-800 p-4 rounded-lg shadow-lg max-w-lg w-full mx-4 sm:mx-auto relative"
-            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-lg p-8 relative z-10"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
           >
-            <img src={selectedTournament.image} alt={selectedTournament.name} className="w-full h-48 object-cover rounded-t-lg" />
-            <h2 className="text-xl font-bold text-white mt-4">{selectedTournament.name}</h2>
-            <p className="text-gray-300 mb-1"><span className="font-bold text-white">Fecha:</span> {selectedTournament.date}</p>
-            <p className="text-gray-300 mb-1"><span className="font-bold text-white">Ubicación:</span> {selectedTournament.location}</p>
-            <p className="text-gray-300 mb-1"><span className="font-bold text-white">Hora:</span> {selectedTournament.hour}</p>
-            <p className="text-gray-300 mb-1"><span className="font-bold text-white">Contacto:</span> {selectedTournament.info}</p>
-            <p className="text-gray-300 mb-1"><span className="font-bold text-white">Inscripciones:</span> {selectedTournament.inscriptions ? 'Abiertas' : 'No Disponible'}</p>
-            <div className="mt-2">
-              <Link to={`/RegistrationForm`} className={selectedTournament.inscriptions ? "text-blue-400 hover:underline" : "line-through text-gray-500 pointer-events-none block mb-2"}>{selectedTournament.inscriptions ? 'Inscripción' : 'Inscripción no disponible'}</Link>
-            </div>
-            <div className="mt-2">
-              <Link to={`/Rules`} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Ver Reglas</Link>
-            </div>
-            <div className="mt-4 flex justify-end">
-              <button className="bg-red-600 text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300" onClick={closeModal}>Cerrar</button>
-            </div>
+            <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onClick={closeModal}>
+              &times;
+            </button>
+            <h2 className="text-2xl font-bold mb-4">{selectedTournament.name}</h2>
+            <img src={selectedTournament.image} alt={selectedTournament.name} className="w-full h-64 object-cover mb-4" />
+            <p className="text-gray-700 mb-2"><span className="font-semibold">Fecha:</span> {formatDate(selectedTournament.date)}</p>
+            <p className="text-gray-700 mb-2"><span className="font-semibold">Ubicación:</span> {selectedTournament.location}</p>
+            <p className="text-gray-700 mb-2"><span className="font-semibold">Hora:</span> {selectedTournament.hour}</p>
+            <p className="text-gray-700 mb-2"><span className="font-semibold">Contacto:</span> {selectedTournament.info}</p>
           </motion.div>
-        </motion.div>
+        </div>
       )}
-
-      <div className="mt-8 text-center">
-        <p className="text-lg text-gray-700">¿Necesitas ayuda o tienes alguna pregunta?</p>
-        <a href="mailto:afibaoficialonline@gmail.com" className="text-blue-600 hover:underline inline-block mt-2">Contáctanos</a>
-      </div>
     </div>
   );
 };
