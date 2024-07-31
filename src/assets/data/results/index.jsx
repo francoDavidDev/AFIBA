@@ -30,7 +30,7 @@ import pdf5_2023 from '../../pdf/results/2023/RESULTADO-SANSON-CUP-2023.pdf'
 export const RESULTS = [
     //2024
 
-    { title: 'COPA PROVINCIA 2024', pdf: pdf2, image: image3, year: '2024' },
+    { title: 'COPA PROVINCIA 2024', pdf: pdf4, image: image3, year: '2024' },
 
     { title: 'CAMPEONATO APERTURA 2024', pdf: pdf2, image: image2, year: '2024' },
     { title: 'SAMSOM CUP 2024', pdf: pdf1, image: image1, year: '2024' },
